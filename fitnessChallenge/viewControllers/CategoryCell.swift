@@ -18,7 +18,8 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-    } 
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -63,18 +64,28 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
         typesCollectionView.register(typesCell.self, forCellWithReuseIdentifier: cellId)
         
         // "H: |[v0]|" This means to expand horizontally from the left to the right edge with v0 being our specificCategoryCell
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": typesCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": typesCollectionView]))
 //        // "V: |[v0]|" means to expand vertically from top to bottom edge with v0 being our specificCategoryCell
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": typesCollectionView]))
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return titles.count
     }
+    
+    
+    // create an array for the different cell labels
+    let titles = ["Body fitness challenge", "Customized body fitness", "Body fitness challenge 2"]
+    // create an array for the different cell labels
+    let descriptions = ["Easy to follow 30 day challenges on health and diet", "Create your own 30 day workout and diet challenges that fits for you!", "Easy to follow 30 day challenges on exercise and diet"]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // This is returning the typesCell (horizontal scroll)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! typesCell
+        // Setting the title labels and description to the following array
+        cell.titleLabel.text = titles[indexPath.item]
+        cell.descriptionLabel.text = descriptions[indexPath.item]
         return cell
     }
     
@@ -100,14 +111,44 @@ class typesCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
+    //Creating the title label
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Body fitness challenge"
+        label.font = UIFont.systemFont(ofSize: 28)
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 1)
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Easy to follow 30 day challenges on exercise and diet"
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.numberOfLines = 4
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
+        return label
+    }()
+    
+    
     // sets up the view for our horizontal scroll cells 
     func setupViews() {
         backgroundColor = UIColor.clear
         layer.borderWidth = 3
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = 5
+        layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        layer.cornerRadius = 30
+        layer.masksToBounds = true
+        
+        // adding to the subview hierarchy
+        addSubview(titleLabel)
+        titleLabel.frame = CGRect(x: frame.width / 4, y: 100, width: 200, height: 70)
+        addSubview(descriptionLabel)
+        descriptionLabel.frame = CGRect(x: frame.width / 5.2, y: frame.height / 2, width: 240, height: 120)
     }
 }
+
 
 
 

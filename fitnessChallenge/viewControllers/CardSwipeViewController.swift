@@ -11,6 +11,9 @@ import UIKit
 
 class CardSwipeViewController: UICollectionViewController {
     
+    // Basically the whole page which is a collectionView!!!
+    @IBOutlet private weak var pageCollectionView: UICollectionView!
+    
     private let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -28,6 +31,12 @@ class CardSwipeViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
         return cell
     }
+    
+    // preparing for a segue!!!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
