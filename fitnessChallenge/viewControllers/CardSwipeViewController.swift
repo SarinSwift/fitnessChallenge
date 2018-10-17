@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 class CardSwipeViewController: UICollectionViewController {
-    
-    // Basically the whole page which is a collectionView!!!
-    @IBOutlet private weak var pageCollectionView: UICollectionView!
-    
     private let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -26,15 +22,25 @@ class CardSwipeViewController: UICollectionViewController {
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
     }
     
+    // will push to another view controller
+    func showThirtyDayChallengeForType(type: String) {
+        let layout = UICollectionViewFlowLayout()
+        // where the code written in TypesDetailController is shown on the screen
+        let typesDetailController = TypesDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(typesDetailController, animated: false)
+        print("showThirtyDayChallenge selectedd")
+    }
+    
     // Telling the collection view how many cells we want to add 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
+        
+        // This adds the code we wrote in
+        // CategoryCell.swift
+        // didSelectItemAt
+        cell.cardSwipeController = self
+        
         return cell
-    }
-    
-    // preparing for a segue!!!
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
     }
     
     
