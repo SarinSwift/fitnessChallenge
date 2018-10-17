@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0400719A217706D100B244C3 /* TypesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04007199217706D100B244C3 /* TypesDetailController.swift */; };
 		049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049399722173DFF3005F86E6 /* AppDelegate.swift */; };
 		049399752173DFF3005F86E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049399742173DFF3005F86E6 /* ViewController.swift */; };
 		049399782173DFF3005F86E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049399762173DFF3005F86E6 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04007199217706D100B244C3 /* TypesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesDetailController.swift; sourceTree = "<group>"; };
 		0493996F2173DFF3005F86E6 /* fitnessChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049399722173DFF3005F86E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049399742173DFF3005F86E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				049399742173DFF3005F86E6 /* ViewController.swift */,
 				04D178452175429000E6AB4E /* CardSwipeViewController.swift */,
 				04D178472175581D00E6AB4E /* CategoryCell.swift */,
+				04007199217706D100B244C3 /* TypesDetailController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049399752173DFF3005F86E6 /* ViewController.swift in Sources */,
+				0400719A217706D100B244C3 /* TypesDetailController.swift in Sources */,
 				04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */,
 				049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */,
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
