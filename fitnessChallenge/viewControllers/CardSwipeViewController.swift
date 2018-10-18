@@ -6,6 +6,10 @@
 //  Copyright © 2018 sarinswift. All rights reserved.
 //
 
+
+// View controller for the card collection view
+
+
 import Foundation
 import UIKit
 

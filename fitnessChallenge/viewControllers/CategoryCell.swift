@@ -6,6 +6,11 @@
 //  Copyright © 2018 sarinswift. All rights reserved.
 //
 
+
+
+// collection view cell for the cardSwipeViewController
+
+
 import Foundation
 import UIKit
 

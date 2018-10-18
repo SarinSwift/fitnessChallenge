@@ -6,6 +6,9 @@
 //  Copyright © 2018 sarinswift. All rights reserved.
 //
 
+
+// ViewController for the 30 day table view cells
+
 import UIKit
 
 
@@ -20,6 +23,20 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     }()
     
     let daysCellId = "daysCellId"
+    
+    let daysArray = [Days(dayNumber: "Day 1"),
+                     Days(dayNumber: "Day 2"),
+                     Days(dayNumber: "Day 3"),
+                     Days(dayNumber: "Day 4"),
+                     Days(dayNumber: "Day 5"),
+                     Days(dayNumber: "Day 6"),
+                     Days(dayNumber: "Day 7"),
+                     Days(dayNumber: "Day 8"),
+                     Days(dayNumber: "Day 9"),
+                     Days(dayNumber: "Day 10")
+    ]
+    
+//    let daysArray = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +66,13 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return daysArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: daysCellId, for: indexPath) as! ThirtyDaysCell
+        cell.dayLabel.text = daysArray[indexPath.item].dayNumber
         return cell
     }
     
@@ -77,11 +89,33 @@ class ThirtyDaysCell: UITableViewCell {
     let cellView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.3921568627, blue: 0.3921568627, alpha: 0.89)
-        view.layer.cornerRadius = 5
+        
+        view.layer.cornerRadius = 10
+        
+        
+        view.layer.masksToBounds = true
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        view.layer.shadowRadius = 3
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: UIRectCorner.allCorners, cornerRadii: CGSize(width: 60, height: 60)).cgPath
+        view.layer.shouldRasterize = true
+        view.layer.rasterizationScale = UIScreen.main.scale
+        
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
         
     }()
+    
+    let dayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Day 1"
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        return label
+    }()
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -89,7 +123,15 @@ class ThirtyDaysCell: UITableViewCell {
     }
     
     func setupView() {
+        
         addSubview(cellView)
+        cellView.addSubview(dayLabel)
+        
+        dayLabel.translatesAutoresizingMaskIntoConstraints = false
+        dayLabel.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        dayLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        dayLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
+        dayLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
         
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
@@ -105,127 +147,3 @@ class ThirtyDaysCell: UITableViewCell {
     }
     
 }
-
-
-//class TypesDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
-//
-//    let headerId = "headerId"
-//
-//    let tableViewCellId = "tableViewCellId"
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        collectionView?.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-//        collectionView?.register(TypesDetailHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-//
-//        setupNavigationBar()
-//    }
-//
-//    //navigation title
-//    func setupNavigationBar() {
-//        navigationItem.title = "Fitness"
-//    }
-//
-//
-//
-//    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! TypesDetailHeader
-//        return header
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        // this shows the table view on the screen
-//
-//        return CGSize(width: view.frame.width, height: view.frame.height)
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellId, for: indexPath)
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-//
-//}
-
-//
-//class ThirtyDaysCell: UITableViewCell {
-//
-//    let cellView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
-//        return view
-//    }()
-//
-//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        setupView()
-//    }
-//
-//    func setupView() {
-//        addSubview(cellView)
-//        cellView.topAnchor.constraint(equalTo: self.topAnchor)
-//        cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-//        cellView.rightAnchor.constraint(equalTo: rightAnchor)
-//        cellView.leftAnchor.constraint(equalTo: leftAnchor)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//}
-//
-//
-//
-//// building out the header
-//// the header is going to be a cell
-//class TypesDetailHeader: BaseCell {
-//
-//    // creates a tableview
-//    let myTableview: UITableView = {
-//        let tv = UITableView()
-//        tv.contentMode = .scaleAspectFill
-//        return tv
-//    }()
-//
-//
-//    override func setupViews() {
-//        super.setupViews()
-//
-//
-//        // adds a tableview within the header cell
-//        addSubview(myTableview)
-//        myTableview.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
-//        myTableview.translatesAutoresizingMaskIntoConstraints = false
-//        myTableview.numberOfRows(inSection: 5)
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": myTableview]))
-//        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": myTableview]))
-//    }
-//
-//}
-//
-//// Create this class so we don't have to rewrite code
-//class BaseCell: UICollectionViewCell {
-//
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setupViews()
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//
-//    func setupViews() {
-//    }
-//
-//}
