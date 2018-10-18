@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0400719A217706D100B244C3 /* TypesDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04007199217706D100B244C3 /* TypesDetailController.swift */; };
+		0400719E21790B9800B244C3 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400719D21790B9800B244C3 /* Days.swift */; };
 		049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049399722173DFF3005F86E6 /* AppDelegate.swift */; };
 		049399752173DFF3005F86E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049399742173DFF3005F86E6 /* ViewController.swift */; };
 		049399782173DFF3005F86E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049399762173DFF3005F86E6 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		04007199217706D100B244C3 /* TypesDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesDetailController.swift; sourceTree = "<group>"; };
+		0400719D21790B9800B244C3 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 		0493996F2173DFF3005F86E6 /* fitnessChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049399722173DFF3005F86E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049399742173DFF3005F86E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0400719F21790CDF00B244C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0400719D21790B9800B244C3 /* Days.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		049399662173DFF3005F86E6 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 			children = (
 				049399722173DFF3005F86E6 /* AppDelegate.swift */,
 				04D178442174FC1100E6AB4E /* viewControllers */,
+				0400719F21790CDF00B244C3 /* Models */,
 				04D178432174FC0400E6AB4E /* storyboards */,
 				049399792173DFF4005F86E6 /* Assets.xcassets */,
 				0493997E2173DFF5005F86E6 /* Info.plist */,
@@ -164,6 +175,7 @@
 				0400719A217706D100B244C3 /* TypesDetailController.swift in Sources */,
 				04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */,
 				049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */,
+				0400719E21790B9800B244C3 /* Days.swift in Sources */,
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
