@@ -83,8 +83,8 @@
 			children = (
 				049399742173DFF3005F86E6 /* ViewController.swift */,
 				04D178452175429000E6AB4E /* CardSwipeViewController.swift */,
-				04D178472175581D00E6AB4E /* CategoryCell.swift */,
 				04007199217706D100B244C3 /* TypesDetailController.swift */,
+				04D178472175581D00E6AB4E /* CategoryCell.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -311,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7C5XTUX6GS;
 				INFOPLIST_FILE = fitnessChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7C5XTUX6GS;
 				INFOPLIST_FILE = fitnessChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
