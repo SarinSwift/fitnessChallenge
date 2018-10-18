@@ -98,13 +98,12 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("the type cell selected")
-        print(indexPath)
-        let type = titles[indexPath.item]
+        let type = titles[indexPath.row]
         cardSwipeController?.showThirtyDayChallengeForType(type: type)
     }
     
 }
+
 
 
 //This is the class the CategoryCell contains
@@ -142,7 +141,7 @@ class typesCell: UICollectionViewCell {
     }()
     
     
-    // sets up the view for our horizontal scroll cells
+    // sets up the view for our horizontal scroll cells 
     func setupViews() {
         backgroundColor = UIColor.clear
         layer.borderWidth = 3
@@ -157,7 +156,6 @@ class typesCell: UICollectionViewCell {
         descriptionLabel.frame = CGRect(x: frame.width / 5.2, y: frame.height / 2, width: 240, height: 120)
     }
 }
-
 
 
 

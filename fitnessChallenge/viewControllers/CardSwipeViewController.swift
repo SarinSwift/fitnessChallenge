@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class CardSwipeViewController: UICollectionViewController {
+    
     private let cellId = "cellId"
     
     override func viewDidLoad() {
@@ -24,10 +25,11 @@ class CardSwipeViewController: UICollectionViewController {
     
     // will push to another view controller
     func showThirtyDayChallengeForType(type: String) {
-        let layout = UICollectionViewFlowLayout()
         // where the code written in TypesDetailController is shown on the screen
-        let typesDetailController = TypesDetailController(collectionViewLayout: layout)
-        navigationController?.pushViewController(typesDetailController, animated: false)
+        let typesDetailC = TypesDetailController()
+        
+        //Here is where we push view view controller
+        navigationController?.pushViewController(typesDetailC, animated: true)
         print("showThirtyDayChallenge selectedd")
     }
     
