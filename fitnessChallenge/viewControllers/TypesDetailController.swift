@@ -15,6 +15,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.separatorColor = UIColor.white
         return tv
     }()
     
@@ -40,8 +41,8 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(myTableview)
         
         NSLayoutConstraint.activate([
-            myTableview.topAnchor.constraint(equalTo: self.view.topAnchor),
-            myTableview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            myTableview.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
+            myTableview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -4),
             myTableview.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             myTableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)
             ])
@@ -75,7 +76,8 @@ class ThirtyDaysCell: UITableViewCell {
     // creating the view
     let cellView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.3921568627, blue: 0.3921568627, alpha: 0.89)
+        view.layer.cornerRadius = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
         
@@ -90,10 +92,10 @@ class ThirtyDaysCell: UITableViewCell {
         addSubview(cellView)
         
         NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: self.topAnchor),
-            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor)
+            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
+            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         
     }
