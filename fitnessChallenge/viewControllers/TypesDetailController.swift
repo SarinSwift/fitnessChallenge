@@ -33,7 +33,26 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
                      Days(dayNumber: "Day 7"),
                      Days(dayNumber: "Day 8"),
                      Days(dayNumber: "Day 9"),
-                     Days(dayNumber: "Day 10")
+                     Days(dayNumber: "Day 11"),
+                     Days(dayNumber: "Day 12"),
+                     Days(dayNumber: "Day 13"),
+                     Days(dayNumber: "Day 14"),
+                     Days(dayNumber: "Day 15"),
+                     Days(dayNumber: "Day 16"),
+                     Days(dayNumber: "Day 17"),
+                     Days(dayNumber: "Day 18"),
+                     Days(dayNumber: "Day 19"),
+                     Days(dayNumber: "Day 20"),
+                     Days(dayNumber: "Day 21"),
+                     Days(dayNumber: "Day 22"),
+                     Days(dayNumber: "Day 23"),
+                     Days(dayNumber: "Day 24"),
+                     Days(dayNumber: "Day 25"),
+                     Days(dayNumber: "Day 26"),
+                     Days(dayNumber: "Day 27"),
+                     Days(dayNumber: "Day 28"),
+                     Days(dayNumber: "Day 29"),
+                     Days(dayNumber: "Day 30"),
     ]
     
     override func viewDidLoad() {

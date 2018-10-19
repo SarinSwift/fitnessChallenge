@@ -13,7 +13,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     private let challenesCellId = "challengesCellId"
     
     let challengesArray = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 3 cups of water"),
-                           Challenges(challenge1: "20 crunches", challenge2: "Take the stairs"),
+                           Challenges(challenge1: "20 crunches", challenge2: "Use the stairs"),
                            Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple"),
                            Challenges(challenge1: "1 minute plank", challenge2: "Think positively!"),
                            Challenges(challenge1: "10 pushups", challenge2: "Organize your room"),
@@ -21,7 +21,28 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
                            Challenges(challenge1: "20 situps", challenge2: "Play relaxing music"),
                            Challenges(challenge1: "10 burpees", challenge2: "Think about 5 things you're grateful for"),
                            Challenges(challenge1: "40 bicycle crunches", challenge2: "Find a positive quote"),
-                           Challenges(challenge1: "Go for a walk", challenge2: "Go to bed early")
+                           Challenges(challenge1: "Go for a walk", challenge2: "Go to bed early"),
+                           Challenges(challenge1: "No sweets today", challenge2: "Write in a diary"),
+                           Challenges(challenge1: "20 lunges", challenge2: "Have a healthy breakfast"),
+                           Challenges(challenge1: "20 situps", challenge2: "Read your favorite quote"),
+                           Challenges(challenge1: "10 pushups", challenge2: "No ice cream"),
+                           Challenges(challenge1: "20 leg lifts", challenge2: "Plan your meals"),
+                           Challenges(challenge1: "30 second side planks", challenge2: "Try new fruits!"),
+                           Challenges(challenge1: "20 sumo squats", challenge2: "No refined sugar in the morning"),
+                           Challenges(challenge1: "15 tricep dips", challenge2: "Have a vegan lunch"),
+                           Challenges(challenge1: "50 high knees", challenge2: "Replace unhealthy snacks with fruit"),
+                           Challenges(challenge1: "10 burpees", challenge2: "Think about one thankful thing"),
+                           Challenges(challenge1: "1 minute walk down plank", challenge2: "Try a new restaurant"),
+                           Challenges(challenge1: "15 jump squats", challenge2: "Cook dinner with someone you love"),
+                           Challenges(challenge1: "exercise for 10 minutes", challenge2: "read a book"),
+                           Challenges(challenge1: "25 narrow squats", challenge2: "Do 1 chore"),
+                           Challenges(challenge1: "1 minute plank shoulder taps", challenge2: "Tell your parents you love them!"),
+                           Challenges(challenge1: "30 side lunges", challenge2: "Take a picture of you smiling"),
+                           Challenges(challenge1: "16 commandos", challenge2: "play sports with friends"),
+                           Challenges(challenge1: "2 minute scissor kicks", challenge2: "Have a game night"),
+                           Challenges(challenge1: "30 reverse lunges", challenge2: "Hangout with your siblings")
+//                           Challenges(challenge1: "1 minute wall squat", challenge2: "Be thankful for every second of the day")
+        
     ]
     
     let myTableview: UITableView = {
@@ -47,7 +68,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         myTableview.dataSource = self
         
         //Makes it so users can't press on the tableviewcell
-        myTableview.allowsSelection = false
+//        myTableview.allowsSelection = false
         myTableview.isScrollEnabled = false
         
         myTableview.register(ChallengesCell.self, forCellReuseIdentifier: challenesCellId)
@@ -165,6 +186,8 @@ class ChallengesCell: UITableViewCell {
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
+        
+        self.selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
