@@ -21,7 +21,7 @@ class CardSwipeViewController: UICollectionViewController {
         super.viewDidLoad()
         
         // Sets the background color for the collection view
-        collectionView?.backgroundColor = UIColor.white
+        collectionView?.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         
         // We need to register CategoryCell or else the app will crash becasue we don't know where to get "cellId" from
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)

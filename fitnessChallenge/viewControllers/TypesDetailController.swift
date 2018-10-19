@@ -36,11 +36,9 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
                      Days(dayNumber: "Day 10")
     ]
     
-//    let daysArray = ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupNavigationBar()
         setupTableView()
     }
@@ -64,6 +62,18 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
             myTableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)
             ])
         
+        
+    }
+    
+    func showDailyChallenges() {
+        let dailyChallengesVC = DailyChallengesViewController()
+        
+        navigationController?.pushViewController(dailyChallengesVC, animated: true)
+        print("A certain day selected")
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,11 +83,17 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: daysCellId, for: indexPath) as! ThirtyDaysCell
         cell.dayLabel.text = daysArray[indexPath.item].dayNumber
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UserDefaults.standard.set(indexPath.row, forKey: "selectedDay")
+        showDailyChallenges()
     }
     
 }
@@ -92,7 +108,7 @@ class ThirtyDaysCell: UITableViewCell {
         
         view.layer.cornerRadius = 10
         
-        
+        // these shadows aren't working!!!
         view.layer.masksToBounds = true
         view.layer.shadowOffset = CGSize(width: 0, height: 3)
         view.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -122,6 +138,8 @@ class ThirtyDaysCell: UITableViewCell {
         setupView()
     }
     
+    
+    
     func setupView() {
         
         addSubview(cellView)
@@ -139,6 +157,8 @@ class ThirtyDaysCell: UITableViewCell {
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
+        
+        self.selectionStyle = .none
         
     }
     
