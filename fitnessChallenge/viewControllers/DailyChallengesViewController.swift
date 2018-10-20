@@ -12,7 +12,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     
     private let challenesCellId = "challengesCellId"
     
-    let challengesArray = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 3 cups of water"),
+    let challengesArray = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water"),
                            Challenges(challenge1: "20 crunches", challenge2: "Use the stairs"),
                            Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple"),
                            Challenges(challenge1: "1 minute plank", challenge2: "Think positively!"),
@@ -41,8 +41,6 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
                            Challenges(challenge1: "16 commandos", challenge2: "play sports with friends"),
                            Challenges(challenge1: "2 minute scissor kicks", challenge2: "Have a game night"),
                            Challenges(challenge1: "30 reverse lunges", challenge2: "Hangout with your siblings")
-//                           Challenges(challenge1: "1 minute wall squat", challenge2: "Be thankful for every second of the day")
-        
     ]
     
     let myTableview: UITableView = {
@@ -68,7 +66,6 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         myTableview.dataSource = self
         
         //Makes it so users can't press on the tableviewcell
-//        myTableview.allowsSelection = false
         myTableview.isScrollEnabled = false
         
         myTableview.register(ChallengesCell.self, forCellReuseIdentifier: challenesCellId)
@@ -187,7 +184,16 @@ class ChallengesCell: UITableViewCell {
             cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         
-        self.selectionStyle = .none
+        markButton.isEnabled = true
+        markButton.addTarget(self, action: #selector(buttonClicked(_ :)), for: .touchUpInside)
+        
+    }
+    
+    @objc func buttonClicked(_ : UIButton) {
+        markButton.backgroundColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+        markButton.setTitle("Completed!", for: .normal)
+        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {
