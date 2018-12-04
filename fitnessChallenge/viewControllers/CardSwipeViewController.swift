@@ -34,7 +34,6 @@ class CardSwipeViewController: UICollectionViewController {
         
         //Here is where we push view view controller
         navigationController?.pushViewController(typesDetailC, animated: true)
-        print("showThirtyDayChallenge selectedd")
     }
     
     // Telling the collection view how many cells we want to add 

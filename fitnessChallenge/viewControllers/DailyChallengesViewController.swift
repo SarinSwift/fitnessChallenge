@@ -10,37 +10,40 @@ import UIKit
 
 class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
     private let challenesCellId = "challengesCellId"
     
-    let challengesArray = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water"),
-                           Challenges(challenge1: "20 crunches", challenge2: "Use the stairs"),
-                           Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple"),
-                           Challenges(challenge1: "1 minute plank", challenge2: "Think positively!"),
-                           Challenges(challenge1: "10 pushups", challenge2: "Organize your room"),
-                           Challenges(challenge1: "20 leg raises", challenge2: "Compliment someone"),
-                           Challenges(challenge1: "20 situps", challenge2: "Play relaxing music"),
-                           Challenges(challenge1: "10 burpees", challenge2: "Think about 5 things you're grateful for"),
-                           Challenges(challenge1: "40 bicycle crunches", challenge2: "Find a positive quote"),
-                           Challenges(challenge1: "Go for a walk", challenge2: "Go to bed early"),
-                           Challenges(challenge1: "No sweets today", challenge2: "Write in a diary"),
-                           Challenges(challenge1: "20 lunges", challenge2: "Have a healthy breakfast"),
-                           Challenges(challenge1: "20 situps", challenge2: "Read your favorite quote"),
-                           Challenges(challenge1: "10 pushups", challenge2: "No ice cream"),
-                           Challenges(challenge1: "20 leg lifts", challenge2: "Plan your meals"),
-                           Challenges(challenge1: "30 second side planks", challenge2: "Try new fruits!"),
-                           Challenges(challenge1: "20 sumo squats", challenge2: "No refined sugar in the morning"),
-                           Challenges(challenge1: "15 tricep dips", challenge2: "Have a vegan lunch"),
-                           Challenges(challenge1: "50 high knees", challenge2: "Replace unhealthy snacks with fruit"),
-                           Challenges(challenge1: "10 burpees", challenge2: "Think about one thankful thing"),
-                           Challenges(challenge1: "1 minute walk down plank", challenge2: "Try a new restaurant"),
-                           Challenges(challenge1: "15 jump squats", challenge2: "Cook dinner with someone you love"),
-                           Challenges(challenge1: "exercise for 10 minutes", challenge2: "read a book"),
-                           Challenges(challenge1: "25 narrow squats", challenge2: "Do 1 chore"),
-                           Challenges(challenge1: "1 minute plank shoulder taps", challenge2: "Tell your parents you love them!"),
-                           Challenges(challenge1: "30 side lunges", challenge2: "Take a picture of you smiling"),
-                           Challenges(challenge1: "16 commandos", challenge2: "play sports with friends"),
-                           Challenges(challenge1: "2 minute scissor kicks", challenge2: "Have a game night"),
-                           Challenges(challenge1: "30 reverse lunges", challenge2: "Hangout with your siblings")
+    // use for loop
+    let challengesArray: [Challenges] = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, lastCompletionDate: nil),
+                           Challenges(challenge1: "1 minute plank", challenge2: "Think positively!", idChallenge1: 7, idChallenge2: 8, lastCompletionDate: nil),
+                           Challenges(challenge1: "10 pushups", challenge2: "Organize your room", idChallenge1: 9, idChallenge2: 10, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 leg raises", challenge2: "Compliment someone", idChallenge1: 11, idChallenge2: 12, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 situps", challenge2: "Play relaxing music", idChallenge1: 13, idChallenge2: 14, lastCompletionDate: nil),
+                           Challenges(challenge1: "10 burpees", challenge2: "Think about 5 things you're grateful for", idChallenge1: 15, idChallenge2: 16, lastCompletionDate: nil),
+                           Challenges(challenge1: "40 bicycle crunches", challenge2: "Find a positive quote", idChallenge1: 17, idChallenge2: 18, lastCompletionDate: nil),
+                           Challenges(challenge1: "Go for a walk", challenge2: "Go to bed early", idChallenge1: 19, idChallenge2: 20, lastCompletionDate: nil),
+                           Challenges(challenge1: "No sweets today", challenge2: "Write in a diary", idChallenge1: 21, idChallenge2: 22, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 lunges", challenge2: "Have a healthy breakfast", idChallenge1: 23, idChallenge2: 24, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 situps", challenge2: "Read your favorite quote", idChallenge1: 25, idChallenge2: 26, lastCompletionDate: nil),
+                           Challenges(challenge1: "10 pushups", challenge2: "No ice cream", idChallenge1: 27, idChallenge2: 28, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 leg lifts", challenge2: "Plan your meals", idChallenge1: 29, idChallenge2: 30, lastCompletionDate: nil),
+                           Challenges(challenge1: "30 second side planks", challenge2: "Try new fruits!", idChallenge1: 31, idChallenge2: 32, lastCompletionDate: nil),
+                           Challenges(challenge1: "20 sumo squats", challenge2: "No refined sugar in the morning", idChallenge1: 33, idChallenge2: 34, lastCompletionDate: nil),
+                           Challenges(challenge1: "15 tricep dips", challenge2: "Have a vegan lunch", idChallenge1: 35, idChallenge2: 36, lastCompletionDate: nil),
+                           Challenges(challenge1: "50 high knees", challenge2: "Replace unhealthy snacks with fruit", idChallenge1: 37, idChallenge2: 38, lastCompletionDate: nil),
+                           Challenges(challenge1: "10 burpees", challenge2: "Think about one thankful thing", idChallenge1: 39, idChallenge2: 40, lastCompletionDate: nil),
+                           Challenges(challenge1: "1 minute walk down plank", challenge2: "Try a new restaurant", idChallenge1: 41, idChallenge2: 42, lastCompletionDate: nil),
+                           Challenges(challenge1: "15 jump squats", challenge2: "Cook dinner with someone you love", idChallenge1: 43, idChallenge2: 44, lastCompletionDate: nil),
+                           Challenges(challenge1: "exercise for 10 minutes", challenge2: "read a book", idChallenge1: 45, idChallenge2: 46, lastCompletionDate: nil),
+                           Challenges(challenge1: "25 narrow squats", challenge2: "Do 1 chore", idChallenge1: 47, idChallenge2: 48, lastCompletionDate: nil),
+                           Challenges(challenge1: "1 minute plank shoulder taps", challenge2: "Tell your parents you love them!", idChallenge1: 49, idChallenge2: 50, lastCompletionDate: nil),
+                           Challenges(challenge1: "30 side lunges", challenge2: "Take a picture of you smiling", idChallenge1: 51, idChallenge2: 52, lastCompletionDate: nil),
+                           Challenges(challenge1: "16 commandos", challenge2: "play sports with friends", idChallenge1: 53, idChallenge2: 54, lastCompletionDate: nil),
+                           Challenges(challenge1: "2 minute scissor kicks", challenge2: "Have a game night", idChallenge1: 55, idChallenge2: 56, lastCompletionDate: nil),
+                           Challenges(challenge1: "30 reverse lunges", challenge2: "Hangout with your siblings", idChallenge1: 57, idChallenge2: 58, lastCompletionDate: nil),
+                           Challenges(challenge1: "8x8 deadlift", challenge2: "10x5 front squat", idChallenge1: 57, idChallenge2: 58, lastCompletionDate: nil)
     ]
     
     let myTableview: UITableView = {
@@ -50,7 +53,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         tv.separatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return tv
     }()
-    
+
     
     
     override func viewDidLoad() {
@@ -67,6 +70,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         
         //Makes it so users can't press on the tableviewcell
         myTableview.isScrollEnabled = false
+        myTableview.allowsSelection = false
         
         myTableview.register(ChallengesCell.self, forCellReuseIdentifier: challenesCellId)
         
@@ -86,6 +90,12 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         setupTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let x = UserDefaults.standard.object(forKey: "markButtonBGColor") as? UIColor {
+            self.view.backgroundColor = x
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -103,15 +113,14 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         
         if indexPath.row == 0 {
             cell.challenge1Label.text = challengesArray[selectedDay].challenge1
-            print(indexPath.item)
+            cell.challenge1 = challengesArray[selectedDay].idChallenge1
+
             return cell
         }
         else if indexPath.row == 1{
             cell.challenge1Label.text = challengesArray[selectedDay].challenge2
-            print(indexPath.item)
             return cell
         }
-        
         return cell
     }
     
@@ -122,6 +131,8 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
 }
 
 class ChallengesCell: UITableViewCell {
+    
+    var challenge1: Int = 0
     
     let cellView: UIView = {
         let view = UIView()
@@ -142,7 +153,8 @@ class ChallengesCell: UITableViewCell {
         return label
     }()
     
-    let markButton: UIButton = {
+    
+    var markButton: UIButton = {
         let button = UIButton()
         button.setTitle("Completed", for: .normal)
         button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
@@ -164,6 +176,16 @@ class ChallengesCell: UITableViewCell {
         addSubview(cellView)
         cellView.addSubview(challenge1Label)
         cellView.addSubview(markButton)
+        
+//        if let status = UserDefaults.standard.string(forKey: "\(challenge1)")  {
+//            if status == "completed" {
+//                markButton.backgroundColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+//                markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+//                markButton.setTitle("Completed!", for: .normal)
+//                markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+//            }
+//        }
+        
         
         challenge1Label.translatesAutoresizingMaskIntoConstraints = false
         challenge1Label.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -187,25 +209,32 @@ class ChallengesCell: UITableViewCell {
         markButton.isEnabled = true
         markButton.addTarget(self, action: #selector(buttonClicked(_ :)), for: .touchUpInside)
         
+        // if challeneg1Done == true {
+        //      make the button all green
+        // }
+        
     }
     
     @objc func buttonClicked(_ : UIButton) {
-        markButton.backgroundColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
         markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
         markButton.setTitle("Completed!", for: .normal)
         markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+        // isChallenge1Done = true
+        
+        // These 2 lines make the whole box jump in front
+        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: nil)
+        
+        
+        let bgColorForButton = markButton.backgroundColor
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: bgColorForButton!)
+        UserDefaults.standard.set(encodedData, forKey: "markButtonBGColor")
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
-
-
-
-
-
-
-

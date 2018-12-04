@@ -14,6 +14,10 @@ import UIKit
 
 class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    private var persistance = PersistenceLayer()
+    
+    
     let myTableview: UITableView = {
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill
@@ -33,6 +37,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
                      Days(dayNumber: "Day 7"),
                      Days(dayNumber: "Day 8"),
                      Days(dayNumber: "Day 9"),
+                     Days(dayNumber: "Day 10"),
                      Days(dayNumber: "Day 11"),
                      Days(dayNumber: "Day 12"),
                      Days(dayNumber: "Day 13"),
@@ -88,7 +93,6 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         let dailyChallengesVC = DailyChallengesViewController()
         
         navigationController?.pushViewController(dailyChallengesVC, animated: true)
-        print("A certain day selected")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,6 +106,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: daysCellId, for: indexPath) as! ThirtyDaysCell
         cell.dayLabel.text = daysArray[indexPath.item].dayNumber
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
@@ -124,6 +129,7 @@ class ThirtyDaysCell: UITableViewCell {
     let cellView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.3921568627, blue: 0.3921568627, alpha: 0.89)
+        
         
         view.layer.cornerRadius = 10
         
