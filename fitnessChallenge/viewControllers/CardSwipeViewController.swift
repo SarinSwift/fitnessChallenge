@@ -42,8 +42,8 @@ class CardSwipeViewController: UICollectionViewController {
     }
     // pushes from hard challenges
     func showThirtyDayChallengeForType2(type: String) {
-        let hardDetailC = HardTypeDetailController()
-        navigationController?.pushViewController(hardDetailC, animated: true)
+        let CustomDetailC = CustomizedTypeDetailController()
+        navigationController?.pushViewController(CustomDetailC, animated: true)
     }
     
     // Telling the collection view how many cells we want to add 

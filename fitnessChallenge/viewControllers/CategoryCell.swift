@@ -84,9 +84,9 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     
     
     // create an array for the different cell labels
-    let titles = ["Body fitness challenge", "Customized body fitness", "Body fitness challenge 2"]
+    let titles = ["Body fitness challenge", "Body fitness challenge 2", "Customized body fitness"]
     // create an array for the different cell labels
-    let descriptions = ["Easy to follow 30 day challenges on health and diet", "Create your own 30 day workout and diet challenges that fits for you!", "Easy to follow 30 day challenges on exercise and diet"]
+    let descriptions = ["Easy to follow 30 day challenges on health and diet", "Easy to follow 30 day challenges on exercise and diet", "Create your own 30 day workout and diet challenges that fits for you!"]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // This is returning the typesCell (horizontal scroll)

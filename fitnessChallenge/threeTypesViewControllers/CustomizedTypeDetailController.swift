@@ -9,7 +9,7 @@
 import Foundation
 import  UIKit
 
-class HardTypeDetailController: UIViewController {
+class CustomizedTypeDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
