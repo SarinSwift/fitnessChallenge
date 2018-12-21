@@ -42,10 +42,10 @@ struct PersistenceLayer {
     mutating func markChallengeAsComplete(_ challengeIndex: Int) -> Challenges {
         var updatedChallenge = self.challenges[challengeIndex]
         
-        guard updatedChallenge.hasCompletedForToday == false else { return updatedChallenge }
-        
+//        guard updatedChallenge.hasCompletedForToday == false else { return updatedChallenge }
+//
         let now = Date()
-        updatedChallenge.lastCompletionDate = now
+//        updatedChallenge.lastCompletionDate = now
         
         self.challenges[challengeIndex] = updatedChallenge
         self.saveChallenges()

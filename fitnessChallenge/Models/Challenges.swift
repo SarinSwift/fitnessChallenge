@@ -13,14 +13,8 @@ struct Challenges: Codable {
     var challenge2: String
     var idChallenge1: Int
     var idChallenge2: Int
-    // ifChallenge1Done: Bool
-    // ifChallenge2DOne: Bool
-    
-    public var lastCompletionDate: Date?
-
-    public var hasCompletedForToday: Bool? {
-        return lastCompletionDate?.isToday ?? false
-    }
+    var ifChallenge1Done: Bool
+    var ifChallenge2Done: Bool
     
 }
 

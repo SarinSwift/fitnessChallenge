@@ -104,7 +104,13 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let type = titles[indexPath.row]
-        cardSwipeController?.showThirtyDayChallengeForType(type: type)
+        if type == titles[0] {
+            cardSwipeController?.showThirtyDayChallengeForType(type: type)
+        } else if type == titles[1] {
+            cardSwipeController?.showThirtyDayChallengeForType1(type: type)
+        } else if type == titles[2] {
+            cardSwipeController?.showThirtyDayChallengeForType2(type: type)
+        }
     }
     
 }

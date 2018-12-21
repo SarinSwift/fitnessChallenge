@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G2307" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CompleteButton" representedClassName="CompleteButton" syncable="YES" codeGenerationType="class">
-        <attribute name="color" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    <entity name="Challenges" representedClassName="Challenges" syncable="YES" codeGenerationType="class">
+        <attribute name="challengesOne" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="challengesTwo" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CompleteButton" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Challenges" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

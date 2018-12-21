@@ -27,13 +27,23 @@ class CardSwipeViewController: UICollectionViewController {
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
     }
     
-    // will push to another view controller
+    // pushes from easy challenges
     func showThirtyDayChallengeForType(type: String) {
         // where the code written in TypesDetailController is shown on the screen
-        let typesDetailC = TypesDetailController()
+        let easyDetailC = TypesDetailController()
         
         //Here is where we push view view controller
-        navigationController?.pushViewController(typesDetailC, animated: true)
+        navigationController?.pushViewController(easyDetailC, animated: true)
+    }
+    // pushes from the med challenges
+    func showThirtyDayChallengeForType1(type: String) {
+        let medDetailC = MedTypeDetailController()
+        navigationController?.pushViewController(medDetailC, animated: true)
+    }
+    // pushes from hard challenges
+    func showThirtyDayChallengeForType2(type: String) {
+        let hardDetailC = HardTypeDetailController()
+        navigationController?.pushViewController(hardDetailC, animated: true)
     }
     
     // Telling the collection view how many cells we want to add 
