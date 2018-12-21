@@ -19,6 +19,8 @@
 		049399782173DFF3005F86E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049399762173DFF3005F86E6 /* Main.storyboard */; };
 		0493997A2173DFF4005F86E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049399792173DFF4005F86E6 /* Assets.xcassets */; };
 		0493997D2173DFF4005F86E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0493997B2173DFF4005F86E6 /* LaunchScreen.storyboard */; };
+		04A869F921CD6956008F30F4 /* MedTypeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A869F821CD6956008F30F4 /* MedTypeDetailController.swift */; };
+		04A869FB21CD6ABE008F30F4 /* HardTypeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A869FA21CD6ABE008F30F4 /* HardTypeDetailController.swift */; };
 		04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */; };
 		04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D178452175429000E6AB4E /* CardSwipeViewController.swift */; };
 		04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D178472175581D00E6AB4E /* CategoryCell.swift */; };
@@ -40,6 +42,8 @@
 		049399792173DFF4005F86E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0493997C2173DFF4005F86E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0493997E2173DFF5005F86E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A869F821CD6956008F30F4 /* MedTypeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedTypeDetailController.swift; sourceTree = "<group>"; };
+		04A869FA21CD6ABE008F30F4 /* HardTypeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTypeDetailController.swift; sourceTree = "<group>"; };
 		04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEmojiViewController.swift; sourceTree = "<group>"; };
 		04D178452175429000E6AB4E /* CardSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwipeViewController.swift; sourceTree = "<group>"; };
 		04D178472175581D00E6AB4E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				049399722173DFF3005F86E6 /* AppDelegate.swift */,
 				04D178442174FC1100E6AB4E /* viewControllers */,
+				04A869FC21CD6BF3008F30F4 /* threeTypesViewControllers */,
 				0400719F21790CDF00B244C3 /* Models */,
 				0449419721B5E86000A253B5 /* Extensions */,
 				04D178432174FC0400E6AB4E /* storyboards */,
@@ -104,6 +109,16 @@
 				0449419421B5C47800A253B5 /* fitnessChallenge.xcdatamodeld */,
 			);
 			path = fitnessChallenge;
+			sourceTree = "<group>";
+		};
+		04A869FC21CD6BF3008F30F4 /* threeTypesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04007199217706D100B244C3 /* TypesDetailController.swift */,
+				04A869F821CD6956008F30F4 /* MedTypeDetailController.swift */,
+				04A869FA21CD6ABE008F30F4 /* HardTypeDetailController.swift */,
+			);
+			path = threeTypesViewControllers;
 			sourceTree = "<group>";
 		};
 		04D178432174FC0400E6AB4E /* storyboards */ = {
@@ -120,7 +135,6 @@
 			children = (
 				049399742173DFF3005F86E6 /* ViewController.swift */,
 				04D178452175429000E6AB4E /* CardSwipeViewController.swift */,
-				04007199217706D100B244C3 /* TypesDetailController.swift */,
 				04D178472175581D00E6AB4E /* CategoryCell.swift */,
 				040071A021791DAE00B244C3 /* DailyChallengesViewController.swift */,
 				04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */,
@@ -207,6 +221,8 @@
 				04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */,
 				049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */,
 				0400719E21790B9800B244C3 /* Days.swift in Sources */,
+				04A869F921CD6956008F30F4 /* MedTypeDetailController.swift in Sources */,
+				04A869FB21CD6ABE008F30F4 /* HardTypeDetailController.swift in Sources */,
 				0449419B21B5EDFF00A253B5 /* CompleteButton.swift in Sources */,
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
 				04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */,
