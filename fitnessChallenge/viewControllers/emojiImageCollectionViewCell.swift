@@ -8,6 +8,8 @@
 
 import UIKit
 
+// collectionViewCell for ChooseEmojiViewController
+
 class emojiImageCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "cellId"

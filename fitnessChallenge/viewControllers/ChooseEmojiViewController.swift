@@ -8,6 +8,9 @@
 
 import UIKit
 
+// should be called when the user completes both challenges in the day
+
+
 class ChooseEmojiViewController: UIViewController {
     
     // Icon made by Freepik from www.flaticon.com 
@@ -56,8 +59,8 @@ extension ChooseEmojiViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 2
-        cell?.layer.cornerRadius = 38
+        cell?.layer.borderWidth = 3
+        cell?.layer.cornerRadius = 36
         cell?.layer.borderColor = #colorLiteral(red: 0.928014338, green: 0.1565714478, blue: 0.1036314741, alpha: 1)
     }
     
