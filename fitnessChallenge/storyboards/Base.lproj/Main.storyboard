@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,6 +121,11 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Get started" id="52Y-Qa-JJr">
                         <barButtonItem key="backBarButtonItem" title="Back" id="QKZ-6G-Gpd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vdN-Jw-DRz">
+                            <connections>
+                                <segue destination="eLM-B1-fNS" kind="show" id="TDL-7i-Icr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Kmk-fK-vIR" id="oOC-TD-DPw"/>
@@ -148,15 +153,34 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dUP-vf-VTc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="dUP-vf-VTc" customClass="EmojiImageCollectionViewCell" customModule="fitnessChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-2J-T3G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" red="0.3294117647" green="0.83529411760000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Gg3-2J-T3G" firstAttribute="leading" secondItem="dUP-vf-VTc" secondAttribute="leading" id="L0u-p6-wf7"/>
+                                            <constraint firstItem="Gg3-2J-T3G" firstAttribute="top" secondItem="dUP-vf-VTc" secondAttribute="top" id="QsJ-Ij-gO4"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gg3-2J-T3G" secondAttribute="bottom" id="Vlo-i0-J6a"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gg3-2J-T3G" secondAttribute="trailing" id="kkh-DM-J5S"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageemojiiii" destination="Gg3-2J-T3G" id="o2P-g3-hA5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="eLM-B1-fNS" id="T9P-Uy-haQ"/>
+                                    <outlet property="delegate" destination="eLM-B1-fNS" id="szC-jJ-FTC"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-hV-00H">
                                 <rect key="frame" x="15" y="597" width="345" height="50"/>
@@ -192,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7W-nz-bVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3653.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="3685.5999999999999" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gXv-6p-R6U">
@@ -235,7 +259,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqC-5O-ay7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943" y="34"/>
+            <point key="canvasLocation" x="2988" y="34"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qbB-1Z-zzm"/>
+    </inferredMetricsTieBreakers>
 </document>
