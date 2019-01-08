@@ -65,6 +65,13 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
 
 extension CustomizedTypeDetailController: UICollectionViewDelegateFlowLayout {
     
+    func showCustomDailyChallenges() {
+        let customDailyCh = CustomizedDailyChallengesViewController()
+        
+        navigationController?.pushViewController(customDailyCh, animated: true)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width/4, height: view.frame.width/4)
     }
@@ -79,6 +86,10 @@ extension CustomizedTypeDetailController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showCustomDailyChallenges()
     }
     
 }

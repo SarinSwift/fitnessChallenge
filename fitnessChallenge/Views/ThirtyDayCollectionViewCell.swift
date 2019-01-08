@@ -8,6 +8,8 @@
 
 import UIKit
 
+// xib cell for the CustomizedTypeDetailController.swift
+
 class ThirtyDayCollectionViewCell: UICollectionViewCell {
     
     let identifier = "customId"
