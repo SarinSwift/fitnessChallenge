@@ -27,13 +27,23 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         let button = UIButton()
         button.setTitle("Add", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)
-        button.layer.cornerRadius = 50
+        button.layer.cornerRadius = 55
         button.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
         button.layer.borderWidth = 5
+        button.addTarget(self, action: #selector(addEmojiTapped(_ :)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    // will bring up the storyboard ChooseEmojiViewController!
+    @objc func addEmojiTapped(_ : UIButton) {
+        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let emojiVC = sb.instantiateViewController(withIdentifier: "chooseEmoji") as! ChooseEmojiViewController
+        self.present(emojiVC, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,17 +79,20 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         ])
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        setupNavBar()
-        setupTableView()
-        
+    func setupButton() {
         view.addSubview(addEmojiButton)
         addEmojiButton.heightAnchor.constraint(equalToConstant: 110).isActive = true
         addEmojiButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
         addEmojiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 335).isActive = true
         addEmojiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavBar()
+        setupTableView()
+        setupButton()
     }
     
     

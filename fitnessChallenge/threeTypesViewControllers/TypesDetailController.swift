@@ -145,8 +145,6 @@ class ThirtyDaysCell: UITableViewCell {
         view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: UIRectCorner.allCorners, cornerRadii: CGSize(width: 60, height: 60)).cgPath
         view.layer.shouldRasterize = true
         view.layer.rasterizationScale = UIScreen.main.scale
-        
-        
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
         
