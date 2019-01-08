@@ -12,6 +12,8 @@
 		040071A121791DAE00B244C3 /* DailyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040071A021791DAE00B244C3 /* DailyChallengesViewController.swift */; };
 		0412A48721E4112C0040B440 /* emojiImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412A48521E4112C0040B440 /* emojiImageCollectionViewCell.swift */; };
 		0412A48821E4112C0040B440 /* emojiImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0412A48621E4112C0040B440 /* emojiImageCollectionViewCell.xib */; };
+		0427FA6D21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FA6B21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift */; };
+		0427FA6E21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0427FA6C21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib */; };
 		0449419921B5E87400A253B5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419821B5E87400A253B5 /* Colors.swift */; };
 		0449419B21B5EDFF00A253B5 /* CompleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419A21B5EDFF00A253B5 /* CompleteButton.swift */; };
 		0458B20C21A242E100BEFE89 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458B20B21A242E100BEFE89 /* PersistenceLayer.swift */; };
@@ -34,6 +36,8 @@
 		040071A021791DAE00B244C3 /* DailyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengesViewController.swift; sourceTree = "<group>"; };
 		0412A48521E4112C0040B440 /* emojiImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emojiImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0412A48621E4112C0040B440 /* emojiImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emojiImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		0427FA6B21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		0427FA6C21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirtyDayCollectionViewCell.xib; sourceTree = "<group>"; };
 		0449419521B5C47800A253B5 /* fitnessChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fitnessChallenge.xcdatamodel; sourceTree = "<group>"; };
 		0449419821B5E87400A253B5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0449419A21B5EDFF00A253B5 /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0427FA6A21E4332800591FE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0427FA6B21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift */,
+				0427FA6C21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0449419721B5E86000A253B5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +118,7 @@
 				049399722173DFF3005F86E6 /* AppDelegate.swift */,
 				04D178442174FC1100E6AB4E /* viewControllers */,
 				04A869FC21CD6BF3008F30F4 /* threeTypesViewControllers */,
+				0427FA6A21E4332800591FE0 /* Views */,
 				0400719F21790CDF00B244C3 /* Models */,
 				0449419721B5E86000A253B5 /* Extensions */,
 				04D178432174FC0400E6AB4E /* storyboards */,
@@ -208,6 +222,7 @@
 			files = (
 				0493997D2173DFF4005F86E6 /* LaunchScreen.storyboard in Resources */,
 				0493997A2173DFF4005F86E6 /* Assets.xcassets in Resources */,
+				0427FA6E21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib in Resources */,
 				0412A48821E4112C0040B440 /* emojiImageCollectionViewCell.xib in Resources */,
 				049399782173DFF3005F86E6 /* Main.storyboard in Resources */,
 			);
@@ -235,6 +250,7 @@
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
 				04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */,
 				040071A121791DAE00B244C3 /* DailyChallengesViewController.swift in Sources */,
+				0427FA6D21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

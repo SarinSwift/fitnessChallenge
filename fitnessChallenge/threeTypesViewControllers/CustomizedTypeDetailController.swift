@@ -36,7 +36,7 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         
-        myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "customId")
+        myCollectionView.register(ThirtyDayCollectionViewCell.nib, forCellWithReuseIdentifier: "customId")
         
         view.addSubview(myCollectionView)
         
@@ -54,9 +54,10 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customId", for: indexPath) as! ThirtyDayCollectionViewCell
         cell.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.3921568627, blue: 0.3921568627, alpha: 0.89)
         cell.layer.cornerRadius = 10
+        cell.dayLabel.text = "Day \(Int(indexPath.row+1))"
         return cell
     }
     
