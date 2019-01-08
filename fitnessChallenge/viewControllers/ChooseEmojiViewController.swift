@@ -13,7 +13,9 @@ import UIKit
 
 class ChooseEmojiViewController: UIViewController {
     
-    // Icon made by Freepik from www.flaticon.com 
+    // Icon made by Freepik from www.flaticon.com
+    // https://www.flaticon.com/free-icons/emo
+    
     let emojiImages = ["smile", "inlove", "happy", "neutral", "thinking", "cry", "mad"]
     
     @IBOutlet weak var collectionView: UICollectionView!

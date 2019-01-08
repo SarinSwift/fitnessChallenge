@@ -121,11 +121,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Get started" id="52Y-Qa-JJr">
                         <barButtonItem key="backBarButtonItem" title="Back" id="QKZ-6G-Gpd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vdN-Jw-DRz">
-                            <connections>
-                                <segue destination="eLM-B1-fNS" kind="show" id="TDL-7i-Icr"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vdN-Jw-DRz"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Kmk-fK-vIR" id="oOC-TD-DPw"/>
@@ -159,22 +155,7 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-2J-T3G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <color key="backgroundColor" red="0.3294117647" green="0.83529411760000005" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </imageView>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="Gg3-2J-T3G" firstAttribute="leading" secondItem="dUP-vf-VTc" secondAttribute="leading" id="L0u-p6-wf7"/>
-                                            <constraint firstItem="Gg3-2J-T3G" firstAttribute="top" secondItem="dUP-vf-VTc" secondAttribute="top" id="QsJ-Ij-gO4"/>
-                                            <constraint firstAttribute="bottom" secondItem="Gg3-2J-T3G" secondAttribute="bottom" id="Vlo-i0-J6a"/>
-                                            <constraint firstAttribute="trailing" secondItem="Gg3-2J-T3G" secondAttribute="trailing" id="kkh-DM-J5S"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageemojiiii" destination="Gg3-2J-T3G" id="o2P-g3-hA5"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -262,7 +243,4 @@
             <point key="canvasLocation" x="2988" y="34"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qbB-1Z-zzm"/>
-    </inferredMetricsTieBreakers>
 </document>

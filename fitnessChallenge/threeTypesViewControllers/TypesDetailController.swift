@@ -91,6 +91,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    // shows the single day challenges :)
     func showDailyChallenges() {
         let dailyChallengesVC = DailyChallengesViewController()
         
@@ -108,7 +109,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: daysCellId, for: indexPath) as! ThirtyDaysCell
         cell.dayLabel.text = daysArray[indexPath.item].dayNumber
-        cell.accessoryType = .disclosureIndicator
+//        cell.accessoryType = .disclosureIndicator
         
         return cell
     }
