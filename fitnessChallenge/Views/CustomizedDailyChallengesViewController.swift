@@ -42,14 +42,11 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let emojiVC = sb.instantiateViewController(withIdentifier: "chooseEmoji") as! ChooseEmojiViewController
-        self.present(emojiVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(emojiVC, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.bringSubview(toFront: addEmojiButton)
-        self.view.sendSubview(toBack: myTableView)
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3s9-Vu-Djc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+            <point key="canvasLocation" x="-223" y="34"/>
         </scene>
         <!--Get started-->
         <scene sceneID="QBp-Q9-Rfc">
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-Ui-l6O">
-                                <rect key="frame" x="15" y="79" width="345" height="506"/>
+                                <rect key="frame" x="15" y="124" width="345" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tnc-hw-5Yr">
                                     <size key="itemSize" width="50" height="50"/>
@@ -179,7 +179,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ilc-Ui-l6O" firstAttribute="top" secondItem="Cuf-SX-rA7" secondAttribute="top" constant="15" id="12G-Ai-n9B"/>
+                            <constraint firstItem="Ilc-Ui-l6O" firstAttribute="top" secondItem="Cuf-SX-rA7" secondAttribute="top" constant="60" id="12G-Ai-n9B"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Ilc-Ui-l6O" secondAttribute="bottom" constant="82" id="38x-HF-i2X"/>
                             <constraint firstItem="Yws-hV-00H" firstAttribute="leading" secondItem="Cuf-SX-rA7" secondAttribute="leading" constant="15" id="M9g-ie-u4M"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="trailing" secondItem="Ilc-Ui-l6O" secondAttribute="trailing" constant="15" id="ZSj-xz-3Py"/>

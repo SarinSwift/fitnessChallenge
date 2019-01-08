@@ -31,12 +31,13 @@ class ChooseEmojiViewController: UIViewController {
     }
     
     @IBAction func pickEmojiButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Submit", message: "we will set this emoji", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Submit", message: "we will set this emoji", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         let yesAction = UIAlertAction(title: "Yes!", style: .default)
         
-        alert.addAction(yesAction)
-        alert.addAction(cancelAction)
+        alertController.addAction(cancelAction)
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
