@@ -156,7 +156,7 @@ class ChallengesCell: UITableViewCell {
     
     var markButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Completed", for: .normal)
+        button.setTitle("Complete", for: .normal)
         button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
         button.layer.cornerRadius = 10

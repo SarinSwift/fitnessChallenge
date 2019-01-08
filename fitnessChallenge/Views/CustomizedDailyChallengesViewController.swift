@@ -17,14 +17,29 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
     let myTableView: UITableView = {
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill
-        tv.translatesAutoresizingMaskIntoConstraints = false
         // standard color is grey, but we want just white
         tv.separatorColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
+    }()
+    
+    let addEmojiButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add", for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89), for: .normal)
+        button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)
+        button.layer.cornerRadius = 50
+        button.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
+        button.layer.borderWidth = 5
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.bringSubview(toFront: addEmojiButton)
+        self.view.sendSubview(toBack: myTableView)
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
@@ -45,6 +60,7 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         myTableView.register(CustomChallengeCell.self, forCellReuseIdentifier: "customChallengeCellId")
         
         view.addSubview(myTableView)
+        
         NSLayoutConstraint.activate([
             myTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
             myTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -4),
@@ -58,6 +74,12 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         
         setupNavBar()
         setupTableView()
+        
+        view.addSubview(addEmojiButton)
+        addEmojiButton.heightAnchor.constraint(equalToConstant: 110).isActive = true
+        addEmojiButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
+        addEmojiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 335).isActive = true
+        addEmojiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     
@@ -81,7 +103,7 @@ class CustomChallengeCell: UITableViewCell {
     
     let cellView: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9342781305, green: 0.3532425165, blue: 0.3764705882, alpha: 0.89)
+        view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -98,7 +120,7 @@ class CustomChallengeCell: UITableViewCell {
     
     var markButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Completed", for: .normal)
+        button.setTitle("Complete", for: .normal)
         button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
         button.layer.cornerRadius = 10
@@ -107,6 +129,7 @@ class CustomChallengeCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
     
     @objc func buttonClicked(_ : UIButton) {
         markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
@@ -149,11 +172,12 @@ class CustomChallengeCell: UITableViewCell {
         markButton.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -20).isActive = true
         markButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
         
+        
         NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
+            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -60)
         ])
         
         markButton.isEnabled = true
