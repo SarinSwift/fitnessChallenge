@@ -169,6 +169,8 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
 
 class ChallengesCell: UITableViewCell {
     
+    var completed = false
+    
     var challenge1: Int = 0
     
     let cellView: UIView = {
@@ -212,15 +214,6 @@ class ChallengesCell: UITableViewCell {
         cellView.addSubview(challenge1Label)
         cellView.addSubview(markButton)
         
-//        if let status = UserDefaults.standard.string(forKey: "\(challenge1)")  {
-//            if status == "completed" {
-//                markButton.backgroundColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-//                markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-//                markButton.setTitle("Completed!", for: .normal)
-//                markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-//            }
-//        }
-        
         
         challenge1Label.translatesAutoresizingMaskIntoConstraints = false
         challenge1Label.heightAnchor.constraint(equalToConstant: 100).isActive = true
@@ -247,22 +240,52 @@ class ChallengesCell: UITableViewCell {
     }
     
     @objc func buttonClicked(_ : UIButton) {
-        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-        markButton.setTitle("Completed!", for: .normal)
-        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+        completed = true
         
-        // These 2 lines make the whole box jump in front
-        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-            self.transform = CGAffineTransform.identity
-        }, completion: nil)
+        // saving to CoreData
+        let challenge = CoreDataHelper.newChallenge()
+        challenge.completion = completed
+        CoreDataHelper.saveChallenge()
         
         
-        let bgColorForButton = markButton.backgroundColor
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: bgColorForButton!)
-        UserDefaults.standard.set(encodedData, forKey: "markButtonBGColor")
+        // setting it to be green based on Boolean value in CoreData
+        if challenge.completion == true {
+            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+            markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+            markButton.setTitle("Completed!", for: .normal)
+            markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+            
+            // These 2 lines make the whole box jump in front
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+                self.transform = CGAffineTransform.identity
+            }, completion: nil)
+        } else {
+            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+            markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            markButton.setTitle("Complete", for: .normal)
+            markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+            
+            // These 2 lines make the whole box jump in front
+            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+                self.transform = CGAffineTransform.identity
+            }, completion: nil)
+        }
+        
+//        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+//        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+//        markButton.setTitle("Completed!", for: .normal)
+//        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+//
+//        // These 2 lines make the whole box jump in front
+//        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+//            self.transform = CGAffineTransform.identity
+//        }, completion: nil)
+        
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

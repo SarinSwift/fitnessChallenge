@@ -164,7 +164,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-hV-00H">
-                                <rect key="frame" x="15" y="597" width="345" height="50"/>
+                                <rect key="frame" x="15" y="595" width="345" height="50"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.3921568627" blue="0.3921568627" alpha="0.89000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5HH-ee-p9m"/>
@@ -183,7 +183,7 @@
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Ilc-Ui-l6O" secondAttribute="bottom" constant="82" id="38x-HF-i2X"/>
                             <constraint firstItem="Yws-hV-00H" firstAttribute="leading" secondItem="Cuf-SX-rA7" secondAttribute="leading" constant="15" id="M9g-ie-u4M"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="trailing" secondItem="Ilc-Ui-l6O" secondAttribute="trailing" constant="15" id="ZSj-xz-3Py"/>
-                            <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Yws-hV-00H" secondAttribute="bottom" constant="20" id="nHt-bI-aPS"/>
+                            <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Yws-hV-00H" secondAttribute="bottom" constant="22" id="nHt-bI-aPS"/>
                             <constraint firstItem="Ilc-Ui-l6O" firstAttribute="leading" secondItem="Cuf-SX-rA7" secondAttribute="leading" constant="15" id="otw-Xn-boi"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="trailing" secondItem="Yws-hV-00H" secondAttribute="trailing" constant="15" id="wTn-75-yMg"/>
                         </constraints>

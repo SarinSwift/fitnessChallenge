@@ -58,7 +58,6 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     }()
     
     
-    
     func setupViews() {
         backgroundColor = UIColor.clear
         
@@ -76,6 +75,10 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
 //        // "V: |[v0]|" means to expand vertically from top to bottom edge with v0 being our specificCategoryCell
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": typesCollectionView]))
     }
+    
+    
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -155,8 +158,8 @@ class typesCell: UICollectionViewCell {
     // sets up the view for our horizontal scroll cells 
     func setupViews() {
         backgroundColor = UIColor.clear
-        layer.borderWidth = 3
-        layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        layer.borderWidth = 2.5
+        layer.borderColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
         layer.cornerRadius = 30
         layer.masksToBounds = true
         

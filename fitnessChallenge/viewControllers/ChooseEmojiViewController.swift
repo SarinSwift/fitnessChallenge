@@ -30,9 +30,23 @@ class ChooseEmojiViewController: UIViewController {
     }
     
     @IBAction func pickEmojiButtonTapped(_ sender: Any) {
+        
+        func yesHandler(alert: UIAlertAction!) {
+            
+            guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else {
+                return
+            }
+            print(selectedIndexPath)
+            let dailyVC = DailyChallengesViewController()
+            dailyVC.addEmojiButton.imageView?.image = UIImage(named: emojiImages[selectedIndexPath.row])
+            // popping only once you have an emoji selected 
+            navigationController?.popViewController(animated: true)
+        }
+        
         let alertController = UIAlertController(title: "Submit", message: "we will set this emoji", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let yesAction = UIAlertAction(title: "Yes!", style: .default)
+        let yesAction = UIAlertAction(title: "Yes!", style: .default, handler: yesHandler)
+        
         
         alertController.addAction(cancelAction)
         alertController.addAction(yesAction)
