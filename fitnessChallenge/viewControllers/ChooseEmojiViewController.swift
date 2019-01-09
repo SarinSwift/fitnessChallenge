@@ -38,8 +38,9 @@ class ChooseEmojiViewController: UIViewController {
             }
             print(selectedIndexPath)
             let dailyVC = DailyChallengesViewController()
-            dailyVC.addEmojiButton.imageView?.image = UIImage(named: emojiImages[selectedIndexPath.row])
-            // popping only once you have an emoji selected 
+            dailyVC.addEmojiButton.setImage(UIImage(named: "\(emojiImages[selectedIndexPath.row])"), for: .normal)
+            print(emojiImages[selectedIndexPath.row])
+            // popping only once you have an emoji selected
             navigationController?.popViewController(animated: true)
         }
         

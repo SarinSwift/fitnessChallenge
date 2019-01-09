@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1679" y="34"/>
         </scene>
-        <!--Choose Emoji-->
+        <!--Emoji-->
         <scene sceneID="mmV-jY-a4R">
             <objects>
                 <viewController storyboardIdentifier="chooseEmoji" id="eLM-B1-fNS" customClass="ChooseEmojiViewController" customModule="fitnessChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-Ui-l6O">
-                                <rect key="frame" x="15" y="124" width="345" height="461"/>
+                                <rect key="frame" x="15" y="194" width="345" height="391"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Tnc-hw-5Yr">
                                     <size key="itemSize" width="50" height="50"/>
@@ -176,20 +176,32 @@
                                     <action selector="pickEmojiButtonTapped:" destination="eLM-B1-fNS" eventType="touchUpInside" id="s4b-wO-9wO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an emoji for how you are feeling after completing the challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59d-Cl-tcU">
+                                <rect key="frame" x="15" y="99" width="345" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Sme-iF-ERb"/>
+                                    <constraint firstAttribute="width" constant="345" id="Xu7-eP-Vrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ilc-Ui-l6O" firstAttribute="top" secondItem="Cuf-SX-rA7" secondAttribute="top" constant="60" id="12G-Ai-n9B"/>
+                            <constraint firstItem="Ilc-Ui-l6O" firstAttribute="top" secondItem="Cuf-SX-rA7" secondAttribute="top" constant="130" id="12G-Ai-n9B"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Ilc-Ui-l6O" secondAttribute="bottom" constant="82" id="38x-HF-i2X"/>
                             <constraint firstItem="Yws-hV-00H" firstAttribute="leading" secondItem="Cuf-SX-rA7" secondAttribute="leading" constant="15" id="M9g-ie-u4M"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="trailing" secondItem="Ilc-Ui-l6O" secondAttribute="trailing" constant="15" id="ZSj-xz-3Py"/>
+                            <constraint firstItem="59d-Cl-tcU" firstAttribute="centerX" secondItem="0Qb-C5-bTY" secondAttribute="centerX" id="i2L-wt-0bT"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="bottom" secondItem="Yws-hV-00H" secondAttribute="bottom" constant="22" id="nHt-bI-aPS"/>
                             <constraint firstItem="Ilc-Ui-l6O" firstAttribute="leading" secondItem="Cuf-SX-rA7" secondAttribute="leading" constant="15" id="otw-Xn-boi"/>
                             <constraint firstItem="Cuf-SX-rA7" firstAttribute="trailing" secondItem="Yws-hV-00H" secondAttribute="trailing" constant="15" id="wTn-75-yMg"/>
+                            <constraint firstItem="59d-Cl-tcU" firstAttribute="top" secondItem="Cuf-SX-rA7" secondAttribute="top" constant="35" id="xtI-uv-bAf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cuf-SX-rA7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose Emoji" id="yB7-Wg-Fle"/>
+                    <navigationItem key="navigationItem" title="Emoji" id="yB7-Wg-Fle"/>
                     <connections>
                         <outlet property="collectionView" destination="Ilc-Ui-l6O" id="bbE-79-zTh"/>
                         <outlet property="pickEmojiButton" destination="Yws-hV-00H" id="7nJ-dD-mbE"/>

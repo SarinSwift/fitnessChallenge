@@ -61,6 +61,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         let button = UIButton()
         button.setTitle("Add", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89), for: .normal)
+//        button.setImage(UIImage(named: "smile"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)
         button.layer.cornerRadius = 55
