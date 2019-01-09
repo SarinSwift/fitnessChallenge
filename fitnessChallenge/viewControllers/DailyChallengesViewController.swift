@@ -8,12 +8,15 @@
 
 import UIKit
 
+// first card
+// The viewController that has the 2 tableViewCells
+
 class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     private let challenesCellId = "challengesCellId"
     
-    // use for loop
+    // use for loop instead of this?
     let challengesArray: [Challenges] = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
                            Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, ifChallenge1Done: false, ifChallenge2Done: false),
                            Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, ifChallenge1Done: false, ifChallenge2Done: false),
@@ -158,6 +161,11 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
 }
+
+
+
+// first card
+// The single cell that has the label and the markButton
 
 class ChallengesCell: UITableViewCell {
     

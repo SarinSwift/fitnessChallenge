@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Main page in storyboard
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

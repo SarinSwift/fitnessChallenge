@@ -13,6 +13,8 @@
 import Foundation
 import UIKit
 
+// The collectionViewController in Main.storyboard
+
 class CardSwipeViewController: UICollectionViewController {
     
     private let cellId = "cellId"
@@ -64,6 +66,7 @@ class CardSwipeViewController: UICollectionViewController {
     }
     
 }
+
 extension CardSwipeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Makes each cell have the width of the entire view

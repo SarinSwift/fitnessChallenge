@@ -9,6 +9,7 @@
 import Foundation
 import  UIKit
 
+// Third card 
 // view controller for the customized section
 
 class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -56,8 +57,9 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customId", for: indexPath) as! ThirtyDayCollectionViewCell
         cell.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.3921568627, blue: 0.3921568627, alpha: 0.89)
-        cell.layer.cornerRadius = 50
+        cell.layer.cornerRadius = 55
         cell.dayLabel.text = "Day \(Int(indexPath.row+1))"
+        cell.dayLabel.font = UIFont.systemFont(ofSize: 20)
         return cell
     }
     
@@ -73,11 +75,11 @@ extension CustomizedTypeDetailController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width/4, height: view.frame.width/4)
+        return CGSize(width: view.frame.width/3.5, height: view.frame.width/3.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 30, left: 25, bottom: 10, right: 25)
+        return UIEdgeInsets(top: 30, left: 15, bottom: 10, right: 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

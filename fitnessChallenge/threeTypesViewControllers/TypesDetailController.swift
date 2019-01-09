@@ -7,6 +7,7 @@
 //
 
 
+// First card
 // ViewController for the 30 day table view cells
 
 import UIKit

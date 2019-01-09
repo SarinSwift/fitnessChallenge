@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Third Card: 30 day collection view cells
 // xib cell for the CustomizedTypeDetailController.swift
 
 class ThirtyDayCollectionViewCell: UICollectionViewCell {

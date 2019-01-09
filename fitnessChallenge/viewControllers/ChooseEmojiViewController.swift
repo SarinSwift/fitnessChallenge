@@ -8,8 +8,7 @@
 
 import UIKit
 
-// should be called when the user completes both challenges in the day
-
+// called when the user presses the addEmojiButton
 
 class ChooseEmojiViewController: UIViewController {
     
