@@ -6,14 +6,21 @@
 //  Copyright © 2018 sarinswift. All rights reserved.
 //
 
+// Icon made by Freepik from www.flaticon.com
+// https://www.flaticon.com/free-icons/emo
+// https://emojiisland.com/pages/free-download-emoji-icons-png
+
 import UIKit
+
+protocol EmojiSetterDelegate {
+    func setEmoji(emoji: String)
+}
 
 // called when the user presses the addEmojiButton
 
 class ChooseEmojiViewController: UIViewController {
     
-    // Icon made by Freepik from www.flaticon.com
-    // https://www.flaticon.com/free-icons/emo
+    var delegate: EmojiSetterDelegate?
     
     let emojiImages = ["smile", "inlove", "happy", "neutral", "thinking", "cry", "mad"]
     
@@ -33,10 +40,16 @@ class ChooseEmojiViewController: UIViewController {
         
         func yesHandler(alert: UIAlertAction!) {
             
+            
+            
             guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else {
                 return
             }
+            delegate?.setEmoji(emoji: emojiImages[selectedIndexPath.row])
+            
+            
             print(selectedIndexPath)
+            // shouldnt be instantiating?? because it doensn't know which
             let dailyVC = DailyChallengesViewController()
             dailyVC.addEmojiButton.setImage(UIImage(named: "\(emojiImages[selectedIndexPath.row])"), for: .normal)
             print(emojiImages[selectedIndexPath.row])
@@ -78,7 +91,7 @@ extension ChooseEmojiViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 3
         cell?.layer.cornerRadius = 36
-        cell?.layer.borderColor = #colorLiteral(red: 0.928014338, green: 0.1565714478, blue: 0.1036314741, alpha: 1)
+        cell?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

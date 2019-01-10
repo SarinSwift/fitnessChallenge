@@ -48,7 +48,7 @@ class typesCell: UICollectionViewCell {
     func setupViews() {
         backgroundColor = UIColor.clear
         layer.borderWidth = 2.5
-        layer.borderColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
+        layer.borderColor = #colorLiteral(red: 0.3333333333, green: 0.2392156863, blue: 0.4039215686, alpha: 1)
         layer.cornerRadius = 30
         layer.masksToBounds = true
         

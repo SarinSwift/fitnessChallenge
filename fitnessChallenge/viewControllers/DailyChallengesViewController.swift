@@ -11,7 +11,12 @@ import UIKit
 // first card
 // The viewController that has the 2 tableViewCells
 
-class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EmojiSetterDelegate {
+    
+    func setEmoji(emoji: String) {
+        self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
+    }
+    
     
     
     private let challenesCellId = "challengesCellId"
@@ -59,9 +64,10 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
 
     let addEmojiButton: UIButton = {
         let button = UIButton()
+        
         button.setTitle("Add", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89), for: .normal)
-//        button.setImage(UIImage(named: "smile"), for: .normal)
+//        button.setImage(UIImage(named: "happy"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)
         button.layer.cornerRadius = 55
@@ -76,13 +82,17 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     @objc func addEmojiTapped(_ : UIButton) {
         let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        
         let emojiVC = sb.instantiateViewController(withIdentifier: "chooseEmoji") as! ChooseEmojiViewController
+        // set the delegate unless it won't set the emoji!!
+        emojiVC.delegate = self
         self.navigationController?.pushViewController(emojiVC, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
        
     }
     func setupNavBar() {
