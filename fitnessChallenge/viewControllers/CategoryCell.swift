@@ -35,25 +35,11 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
     
     // Adding the collection view within my cell.
     let typesCollectionView: UICollectionView = {
-        
         let layout = UICollectionViewFlowLayout()
-        
-        // It's set by default to vertical,
-        // but we want to let it scroll horizontally
         layout.scrollDirection = .horizontal
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        // Setting the background of the
-        // vertical collection view to a
-        // blue color
         collectionView.backgroundColor = UIColor.clear
-        
-        // in order for my constraints to work,
-        // i have to turn auto resizing masks
-        // to constraints off
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-
         return collectionView
     }()
     
@@ -75,11 +61,6 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollection
 //        // "V: |[v0]|" means to expand vertically from top to bottom edge with v0 being our specificCategoryCell
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": typesCollectionView]))
     }
-    
-    
-    
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titles.count

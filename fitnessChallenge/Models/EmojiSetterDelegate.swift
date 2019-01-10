@@ -8,6 +8,8 @@
 
 import Foundation
 
+// inheriting this delegate in the DailyChallengesViewController.swift to save state of the button to this viewcontroller
+
 protocol EmojiSetterDelegate {
     func setEmoji(emoji: String)
 }

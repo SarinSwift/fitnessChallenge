@@ -25,11 +25,5 @@ class emojiImageCollectionViewCell: UICollectionViewCell {
     func setupImage(image: UIImage) {
         self.emojiImage.image = image
     }
-    
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
 
 }

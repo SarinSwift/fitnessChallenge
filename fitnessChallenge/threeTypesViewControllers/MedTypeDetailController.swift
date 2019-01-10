@@ -9,29 +9,11 @@
 import Foundation
 import UIKit
 
+// Second card
+// ViewController for the 30 day table view cells
+
 class MedTypeDetailController: TypesDetailController {
-    
-//    let myTableview: UITableView = {
-//        let tv = UITableView()
-//        tv.contentMode = .scaleAspectFill
-//        tv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//        tv.translatesAutoresizingMaskIntoConstraints = false
-//        tv.separatorColor = UIColor.white
-//        return tv
-//    }()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
-//
-//        setupNavBar()
-//        setupTableView()
-//    }
-//
-//    func setupNavBar() {
-//        navigationItem.title = "Fitness"
-//    }
-//
+
     override func setupTableView() {
         myTableview.delegate = self
         myTableview.dataSource = self
@@ -52,11 +34,7 @@ class MedTypeDetailController: TypesDetailController {
         let medDailyChallengesvc = MedDailyChallengesVC()
         navigationController?.pushViewController(medDailyChallengesvc, animated: true)
     }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 30
-//    }
-//
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medCellId", for: indexPath) as! MedThirtyDayCell
         cell.dayLabel.text = daysArray[indexPath.item].dayNumber

@@ -17,7 +17,6 @@
 		0427FA7021E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */; };
 		042F49E021E56570008A3580 /* fitnessChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0449419421B5C47800A253B5 /* fitnessChallenge.xcdatamodeld */; };
 		0449419921B5E87400A253B5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419821B5E87400A253B5 /* Colors.swift */; };
-		0449419B21B5EDFF00A253B5 /* CompleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419A21B5EDFF00A253B5 /* CompleteButton.swift */; };
 		0458B20C21A242E100BEFE89 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458B20B21A242E100BEFE89 /* PersistenceLayer.swift */; };
 		04596C6821E55CEB0087C4BA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04596C6721E55CEB0087C4BA /* CoreDataHelper.swift */; };
 		048949692179397900499313 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048949682179397900499313 /* Challenges.swift */; };
@@ -47,7 +46,6 @@
 		0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedDailyChallengesViewController.swift; sourceTree = "<group>"; };
 		0449419521B5C47800A253B5 /* fitnessChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fitnessChallenge.xcdatamodel; sourceTree = "<group>"; };
 		0449419821B5E87400A253B5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0449419A21B5EDFF00A253B5 /* CompleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteButton.swift; sourceTree = "<group>"; };
 		0458B20B21A242E100BEFE89 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		04596C6721E55CEB0087C4BA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		048949682179397900499313 /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				0449419821B5E87400A253B5 /* Colors.swift */,
-				0449419A21B5EDFF00A253B5 /* CompleteButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				0427FA7021E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift in Sources */,
 				04A869F921CD6956008F30F4 /* MedTypeDetailController.swift in Sources */,
 				04A869FB21CD6ABE008F30F4 /* CustomizedTypeDetailController.swift in Sources */,
-				0449419B21B5EDFF00A253B5 /* CompleteButton.swift in Sources */,
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
 				04D09D2321E6F97A0065EFDE /* EmojiSetterDelegate.swift in Sources */,
 				04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */,

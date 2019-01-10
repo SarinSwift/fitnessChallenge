@@ -76,7 +76,6 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         myTableView.isScrollEnabled = false
         myTableView.allowsSelection = false
         
-        // CHANGE THIS!!!
         myTableView.register(CustomChallengeCell.self, forCellReuseIdentifier: "customChallengeCellId")
         
         view.addSubview(myTableView)
@@ -205,30 +204,6 @@ class CustomChallengeCell: UITableViewCell {
         
         markButton.isEnabled = true
         markButton.addTarget(self, action: #selector(buttonClicked(_ :)), for: .touchUpInside)
-    }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        // used to make the view resign (optionally force)
-////        self.view.endEditing(true)
-//
-//        // set the text in the textField to the one saved in coreData
-//        let challenges = CoreDataHelper.retrieveChallenge()
-//        let challenge = challenges.first
-//        let cell = CustomChallengeCell()
-//        cell.challenge1TextField.text = challenge?.stringChallenge
-//
-//        // save the users input to coreData
-//        let challengeName = CoreDataHelper.newChallenge()
-//        challengeName.stringChallenge = cell.challenge1TextField.text
-//        CoreDataHelper.saveChallenge()
-//    }
-    
-    
-    // should go in viewWillLoad
-    override func awakeFromNib() {
-//        let challenges = CoreDataHelper.retrieveChallenge()
-//        let challenge = challenges.first
-//        challenge1TextField.text = challenge?.stringChallenge ?? "not saved I guess?"
     }
     
     required init?(coder aDecoder: NSCoder) {
