@@ -16,9 +16,6 @@ import UIKit
 class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    private var persistance = PersistenceLayer()
-    
-    
     let myTableview: UITableView = {
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill

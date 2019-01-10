@@ -31,6 +31,7 @@
 		04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */; };
 		04D09D2121E697E40065EFDE /* TypesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D09D2021E697E40065EFDE /* TypesCell.swift */; };
 		04D09D2321E6F97A0065EFDE /* EmojiSetterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D09D2221E6F97A0065EFDE /* EmojiSetterDelegate.swift */; };
+		04D09D2521E712B20065EFDE /* MedDailyChallengesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D09D2421E712B20065EFDE /* MedDailyChallengesVC.swift */; };
 		04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D178452175429000E6AB4E /* CardSwipeViewController.swift */; };
 		04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D178472175581D00E6AB4E /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEmojiViewController.swift; sourceTree = "<group>"; };
 		04D09D2021E697E40065EFDE /* TypesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCell.swift; sourceTree = "<group>"; };
 		04D09D2221E6F97A0065EFDE /* EmojiSetterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiSetterDelegate.swift; sourceTree = "<group>"; };
+		04D09D2421E712B20065EFDE /* MedDailyChallengesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedDailyChallengesVC.swift; sourceTree = "<group>"; };
 		04D178452175429000E6AB4E /* CardSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSwipeViewController.swift; sourceTree = "<group>"; };
 		04D178472175581D00E6AB4E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 				04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */,
 				0412A48521E4112C0040B440 /* emojiImageCollectionViewCell.swift */,
 				0412A48621E4112C0040B440 /* emojiImageCollectionViewCell.xib */,
+				04D09D2421E712B20065EFDE /* MedDailyChallengesVC.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */,
 				049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */,
 				0400719E21790B9800B244C3 /* Days.swift in Sources */,
+				04D09D2521E712B20065EFDE /* MedDailyChallengesVC.swift in Sources */,
 				0427FA7021E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift in Sources */,
 				04A869F921CD6956008F30F4 /* MedTypeDetailController.swift in Sources */,
 				04A869FB21CD6ABE008F30F4 /* CustomizedTypeDetailController.swift in Sources */,
