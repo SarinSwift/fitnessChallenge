@@ -10,4 +10,3 @@ Read my blog post about this [app!](https://uxdesign.cc/spd1-1-health-and-diet-c
 - Add an emoji of how you're feeling after completing a day
 
 ## Screen Casts
-![1](screenshot.png)
