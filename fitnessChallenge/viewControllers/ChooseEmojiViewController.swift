@@ -12,9 +12,7 @@
 
 import UIKit
 
-protocol EmojiSetterDelegate {
-    func setEmoji(emoji: String)
-}
+
 
 // called when the user presses the addEmojiButton
 
@@ -46,13 +44,9 @@ class ChooseEmojiViewController: UIViewController {
                 return
             }
             delegate?.setEmoji(emoji: emojiImages[selectedIndexPath.row])
-            
-            
-            print(selectedIndexPath)
-            // shouldnt be instantiating?? because it doensn't know which
+            // shouldn't be instantiating?? because it doensn't know which
             let dailyVC = DailyChallengesViewController()
             dailyVC.addEmojiButton.setImage(UIImage(named: "\(emojiImages[selectedIndexPath.row])"), for: .normal)
-            print(emojiImages[selectedIndexPath.row])
             // popping only once you have an emoji selected
             navigationController?.popViewController(animated: true)
         }

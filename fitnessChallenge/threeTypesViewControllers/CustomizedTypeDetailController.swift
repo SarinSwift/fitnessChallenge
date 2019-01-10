@@ -18,7 +18,7 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
         let flow = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: view.bounds, collectionViewLayout: flow)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return cv
     }()
     
@@ -27,6 +27,7 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
         
         setupNavBar()
         setupCollectionView()
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     
     func setupNavBar() {
@@ -42,7 +43,7 @@ class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSour
         view.addSubview(myCollectionView)
         
         NSLayoutConstraint.activate([
-            myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
+            myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 70),
             myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -4),
             myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor)

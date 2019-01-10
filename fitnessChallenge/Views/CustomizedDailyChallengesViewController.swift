@@ -31,7 +31,7 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)
         button.layer.cornerRadius = 55
         button.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
-        button.layer.borderWidth = 5
+        button.layer.borderWidth = 3.5
         button.addTarget(self, action: #selector(addEmojiTapped(_ :)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -80,7 +80,7 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         view.addSubview(addEmojiButton)
         addEmojiButton.heightAnchor.constraint(equalToConstant: 110).isActive = true
         addEmojiButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-        addEmojiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 335).isActive = true
+        addEmojiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: (view.bounds.height / 3) + 20).isActive = true
         addEmojiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
