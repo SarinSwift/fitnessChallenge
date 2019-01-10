@@ -22,6 +22,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     let myTableview: UITableView = {
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill
+        tv.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.separatorColor = UIColor.white
         return tv
@@ -83,7 +84,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(myTableview)
         
         NSLayoutConstraint.activate([
-            myTableview.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
+            myTableview.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 64),
             myTableview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -4),
             myTableview.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             myTableview.leftAnchor.constraint(equalTo: self.view.leftAnchor)

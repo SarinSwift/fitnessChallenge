@@ -85,7 +85,7 @@ extension ChooseEmojiViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 3
         cell?.layer.cornerRadius = 36
-        cell?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell?.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

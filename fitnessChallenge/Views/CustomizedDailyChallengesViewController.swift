@@ -12,7 +12,12 @@ import UIKit
 // appears after you selected a cell
 // shows 2 cards with a text field that the user can input their daily challenges :)
 
-class CustomizedDailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CustomizedDailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EmojiSetterDelegate {
+    
+    func setEmoji(emoji: String) {
+        self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
+    }
+    
     
     let myTableView: UITableView = {
         let tv = UITableView()
@@ -42,6 +47,7 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let emojiVC = sb.instantiateViewController(withIdentifier: "chooseEmoji") as! ChooseEmojiViewController
+        emojiVC.delegate = self
         self.navigationController?.pushViewController(emojiVC, animated: true)
     }
     
@@ -49,6 +55,13 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
         super.viewDidLoad()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func setupNavBar() {
