@@ -153,41 +153,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OX7-R8-8Ul">
-                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UTq-bv-ZTt">
-                                    <size key="itemSize" width="165" height="188"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="infoCellId" reuseIdentifier="infoCellId" id="vav-Ge-blC" customClass="InfoExerciseCell" customModule="fitnessChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="188"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="165" height="188"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                        <size key="customSize" width="165" height="188"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OX7-R8-8Ul" firstAttribute="trailing" secondItem="aM3-XN-gmT" secondAttribute="trailing" id="1UJ-0m-SHK"/>
-                            <constraint firstItem="OX7-R8-8Ul" firstAttribute="bottom" secondItem="aM3-XN-gmT" secondAttribute="bottom" id="1V1-pL-ygF"/>
                             <constraint firstItem="H3a-zW-sKT" firstAttribute="top" secondItem="aM3-XN-gmT" secondAttribute="top" constant="10" id="YdE-q0-7Au"/>
-                            <constraint firstItem="OX7-R8-8Ul" firstAttribute="top" secondItem="H3a-zW-sKT" secondAttribute="bottom" id="cgc-ar-bB2"/>
                             <constraint firstItem="H3a-zW-sKT" firstAttribute="centerX" secondItem="aM3-XN-gmT" secondAttribute="centerX" id="g9a-l8-9tI"/>
-                            <constraint firstItem="OX7-R8-8Ul" firstAttribute="leading" secondItem="aM3-XN-gmT" secondAttribute="leading" id="stY-fk-oKn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aM3-XN-gmT"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="OX7-R8-8Ul" id="dZJ-Br-5oP"/>
                         <outlet property="infoLabel" destination="H3a-zW-sKT" id="49h-jk-aEP"/>
                     </connections>
                 </viewController>
