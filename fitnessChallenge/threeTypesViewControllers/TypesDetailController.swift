@@ -15,7 +15,11 @@ import UIKit
 
 class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
+    var daysArrayTest : [Challenges]!
     let myTableview: UITableView = {
         let tv = UITableView()
         tv.contentMode = .scaleAspectFill
@@ -93,9 +97,14 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     // shows the single day challenges :)
     func showDailyChallenges() {
         let dailyChallengesVC = DailyChallengesViewController()
-        
         navigationController?.pushViewController(dailyChallengesVC, animated: true)
     }
+
+//    func showDailyChallenges(selectedDay: Challenges) {
+//        let dailyChallengesVC = DailyChallengesViewController()
+//        dailyChallengesVC.dailyChallenge = selectedDay
+//        navigationController?.pushViewController(dailyChallengesVC, animated: true)
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -119,6 +128,12 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.standard.set(indexPath.row, forKey: "selectedDay")
+        
+        let selectedDay = daysArray[indexPath.row]
+        //Get the object correponding to the day
+    
+//        uncomment!!
+//        showDailyChallenges(selectedDay: selectedDay)
         showDailyChallenges()
     }
     

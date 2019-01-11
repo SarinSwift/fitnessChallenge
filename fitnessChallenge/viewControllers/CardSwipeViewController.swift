@@ -16,6 +16,9 @@ import UIKit
 // The collectionViewController in Main.storyboard
 
 class CardSwipeViewController: UICollectionViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     private let cellId = "cellId"
     

@@ -17,6 +17,9 @@ import UIKit
 // called when the user presses the addEmojiButton
 
 class ChooseEmojiViewController: UIViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     var delegate: EmojiSetterDelegate?
     
@@ -83,9 +86,9 @@ extension ChooseEmojiViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
-        cell?.layer.borderWidth = 3
+        cell?.layer.borderWidth = 3.5
         cell?.layer.cornerRadius = 36
-        cell?.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89)
+        cell?.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

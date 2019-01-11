@@ -14,6 +14,10 @@ import  UIKit
 
 class CustomizedTypeDetailController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     lazy var myCollectionView: UICollectionView = {
         let flow = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: view.bounds, collectionViewLayout: flow)
@@ -70,7 +74,6 @@ extension CustomizedTypeDetailController: UICollectionViewDelegateFlowLayout {
     
     func showCustomDailyChallenges() {
         let customDailyCh = CustomizedDailyChallengesViewController()
-        
         navigationController?.pushViewController(customDailyCh, animated: true)
     }
     

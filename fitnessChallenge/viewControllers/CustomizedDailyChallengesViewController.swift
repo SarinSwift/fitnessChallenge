@@ -13,11 +13,13 @@ import UIKit
 // shows 2 cards with a text field that the user can input their daily challenges :)
 
 class CustomizedDailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EmojiSetterDelegate {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     func setEmoji(emoji: String) {
         self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
     }
-    
     
     let myTableView: UITableView = {
         let tv = UITableView()
@@ -121,7 +123,7 @@ class CustomizedDailyChallengesViewController: UIViewController, UITableViewDele
     
 }
 
-class CustomChallengeCell: UITableViewCell {
+class CustomChallengeCell: UITableViewCell, UITextFieldDelegate {
     
     let cellView: UIView = {
         let view = UIView()
@@ -131,11 +133,21 @@ class CustomChallengeCell: UITableViewCell {
         return view
     }()
     
+//    let challenge1TextField: UITextField = {
+//        let textField = UITextField()
+//        textField.placeholder = "Insert Challenge 1"
+//        textField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        textField.font = UIFont.boldSystemFont(ofSize: 18)
+//        textField.translatesAutoresizingMaskIntoConstraints = false
+//        return textField
+//    }()
+    
     let challenge1TextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Insert Challenge 1"
         textField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         textField.font = UIFont.boldSystemFont(ofSize: 18)
+//        textField.addTarget(self, action: #selector(myTargetFunction), for: UIControlEvents.touchDown)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -176,6 +188,8 @@ class CustomChallengeCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupView()
+        
+        
     }
     
     func setupView() {

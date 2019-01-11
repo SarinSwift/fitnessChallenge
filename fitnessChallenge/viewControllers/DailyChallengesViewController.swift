@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import CoreData
+
+//class Persistance {
+//    var bodyFitnessChallenge = BodyFitnessChallenge()
+//    //..
+//}
+//
+//class BodyFitnessChallenge {
+//    var dailyChallenges: [Challenges] = [
+//        Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
+//        Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, ifChallenge1Done: false, ifChallenge2Done: false),
+//        Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, ifChallenge1Done: false, ifChallenge2Done: false),
+//        Challenges(challenge1: "1 minute plank", challenge2: "30 jumping jacks", idChallenge1: 7, idChallenge2: 8, ifChallenge1Done: false, ifChallenge2Done: false),
+//        Challenges(challenge1: "10 pushups", challenge2: "Organize your room", idChallenge1: 9, idChallenge2: 10, ifChallenge1Done: false, ifChallenge2Done: false)
+//    ]
+//}
 
 // first card
 // The viewController that has the 2 tableViewCells
 
 class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EmojiSetterDelegate {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    var dailyChallenge: Challenges!
     
     func setEmoji(emoji: String) {
         self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
     }
-    
-    
     
     private let challenesCellId = "challengesCellId"
     
@@ -90,8 +109,6 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-       
     }
     func setupNavBar() {
         navigationItem.title = "Challenges"
@@ -151,23 +168,35 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
        
         let selectedDay = UserDefaults.standard.value(forKey: "selectedDay") as! Int
-        
         if indexPath.row == 0 {
             cell.challenge1Label.text = challengesArray[selectedDay].challenge1
             cell.challenge1 = challengesArray[selectedDay].idChallenge1
-
+            cell.completed = challengesArray[selectedDay].ifChallenge1Done
             return cell
         }
         else if indexPath.row == 1{
             cell.challenge1Label.text = challengesArray[selectedDay].challenge2
             return cell
         }
+        
+        // 1
+        cell.markButton.setTitle("Completed!!!!", for: .normal)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.height / 3
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
+//        
+//        if cell.completed == true {
+//            cell.markButton.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+//        } else if cell.completed == false {
+//            cell.markButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+//        }
+//    }
     
 }
 
@@ -179,6 +208,27 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
 class ChallengesCell: UITableViewCell {
     
     var completed = false
+//        didSet {
+//
+//            // setting it to be green based on Boolean value in CoreData
+//            if completed == true {
+//                markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+//                markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+//                markButton.setTitle("Completed!", for: .normal)
+//                markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+//
+//                // These 2 lines make the whole box jump in front
+//                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+//                    self.transform = CGAffineTransform.identity
+//                }, completion: nil)
+//            } else {
+//                markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//                markButton.setTitle("Complete", for: .normal)
+//                markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+//            }
+//        }
+//   {
     
     var challenge1: Int = 0
     
@@ -256,14 +306,13 @@ class ChallengesCell: UITableViewCell {
         challenge.completion = completed
         CoreDataHelper.saveChallenge()
         
-        
         // setting it to be green based on Boolean value in CoreData
         if challenge.completion == true {
             markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
             markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
             markButton.setTitle("Completed!", for: .normal)
             markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-            
+
             // These 2 lines make the whole box jump in front
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
@@ -274,7 +323,7 @@ class ChallengesCell: UITableViewCell {
             markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             markButton.setTitle("Complete", for: .normal)
             markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-            
+
             // These 2 lines make the whole box jump in front
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
@@ -282,16 +331,16 @@ class ChallengesCell: UITableViewCell {
             }, completion: nil)
         }
         
-//        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-//        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-//        markButton.setTitle("Completed!", for: .normal)
-//        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-//
-//        // These 2 lines make the whole box jump in front
-//        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-//            self.transform = CGAffineTransform.identity
-//        }, completion: nil)
+        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+        markButton.setTitle("Completed!", for: .normal)
+        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+
+        // These 2 lines make the whole box jump in front
+        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: nil)
         
     }
     
