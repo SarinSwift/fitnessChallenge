@@ -10,7 +10,7 @@ import UIKit
 
 class CircularCollectionViewLayout: UICollectionViewLayout {
     
-    let itemSize = CGSize(width: 133, height: 173)
+    let itemSize = CGSize(width: 320, height: 446)
     
     var angleAtExtreme: CGFloat {
         return collectionView!.numberOfItems(inSection: 0) > 0 ?
