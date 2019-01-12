@@ -129,7 +129,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UserDefaults.standard.set(indexPath.row, forKey: "selectedDay")
         
-        let selectedDay = daysArray[indexPath.row]
+//        let selectedDay = daysArray[indexPath.row]
         //Get the object correponding to the day
     
 //        uncomment!!

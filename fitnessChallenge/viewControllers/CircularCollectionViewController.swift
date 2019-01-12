@@ -20,12 +20,9 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
         let label = UILabel()
         label.text = "Targeted Muscle Groups and Exercises"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont(name: "Helvetica", size: 22)
+        label.font = UIFont(name: "Helvetica", size: 25)
         label.numberOfLines = 10
         label.textAlignment = .center
-        label.layer.borderWidth = 2
-        label.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.layer.cornerRadius = 5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,7 +32,7 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
         collectionView?.delegate = self
         collectionView?.dataSource = self
         
-        collectionView?.backgroundColor = #colorLiteral(red: 0.9342781305, green: 0.3532425165, blue: 0.3745281994, alpha: 1)
+        collectionView?.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 1)
         
         self.collectionView!.register(CircularCollectionViewCell.self, forCellWithReuseIdentifier: "circleCellId")
         let imageView = UIImageView(image: UIImage(named: "bg-dark"))
@@ -43,7 +40,7 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
         
         view.addSubview(infoLabel)
         
-        NSLayoutConstraint(item: infoLabel, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 130).isActive = true
+        NSLayoutConstraint(item: infoLabel, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 100).isActive = true
         NSLayoutConstraint(item: infoLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: infoLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 80).isActive = true
         NSLayoutConstraint(item: infoLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 330).isActive = true
@@ -71,7 +68,7 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
         cell.imageName = exerImages[indexPath.row]
         cell.exerciseLabel.text = exerImagesText[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 18
         return cell
     }
     
@@ -104,10 +101,9 @@ class CircularCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.layer.cornerRadius = 5
-        contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        contentView.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 1)
         contentView.layer.borderWidth = 3.7
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 18
         contentView.layer.shouldRasterize = true
         contentView.layer.rasterizationScale = UIScreen.main.scale
         contentView.clipsToBounds = true
@@ -115,10 +111,10 @@ class CircularCollectionViewCell: UICollectionViewCell {
         addSubview(imageView)
         addSubview(exerciseLabel)
         
-        NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 10).isActive = true
         NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 30).isActive = true
-        NSLayoutConstraint(item: imageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: imageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: imageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -30).isActive = true
+        NSLayoutConstraint(item: imageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 30).isActive = true
         
         NSLayoutConstraint(item: exerciseLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 30).isActive = true
         NSLayoutConstraint(item: exerciseLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0).isActive = true

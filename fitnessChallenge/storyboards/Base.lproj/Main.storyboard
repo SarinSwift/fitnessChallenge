@@ -121,9 +121,9 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Get started" id="52Y-Qa-JJr">
                         <barButtonItem key="backBarButtonItem" title="Back" id="QKZ-6G-Gpd"/>
-                        <barButtonItem key="rightBarButtonItem" image="smallerInfo" style="done" id="vdN-Jw-DRz">
+                        <barButtonItem key="rightBarButtonItem" image="dumbellssmall" style="done" id="vdN-Jw-DRz">
                             <connections>
-                                <segue destination="uhf-vc-uGf" kind="show" id="WTa-Uv-94G"/>
+                                <segue destination="uhf-vc-uGf" kind="show" id="LWF-YN-EuD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -186,10 +186,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for workouts!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-zW-sKT">
-                                <rect key="frame" x="16" y="30" width="343" height="55"/>
+                                <rect key="frame" x="89" y="30" width="197" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Le9-Y6-MmP"/>
-                                    <constraint firstAttribute="width" constant="343" id="YQa-3c-n6b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -209,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbD-eP-pW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="874"/>
+            <point key="canvasLocation" x="2047" y="971"/>
         </scene>
         <!--Emoji-->
         <scene sceneID="mmV-jY-a4R">
@@ -336,6 +335,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="smallerInfo" width="32" height="32"/>
+        <image name="dumbellssmall" width="40" height="40"/>
     </resources>
 </document>

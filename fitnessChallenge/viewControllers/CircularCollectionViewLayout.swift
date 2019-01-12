@@ -24,7 +24,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     var attributesList = [CircularCollectionViewLayoutAttributes]()
     
     // when the radius changes you recalculate everything from the call to invalidateLayout()
-    var radius: CGFloat = 500 {
+    var radius: CGFloat = 700 {
         didSet {
             invalidateLayout()
         }
@@ -51,7 +51,7 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         
-        let anchorPointY = ((itemSize.height / 2.0) + radius) / itemSize.height
+        let anchorPointY = ((itemSize.height / 2.0) + radius) / (itemSize.height-20)
         let centerX = collectionView!.contentOffset.x + (collectionView!.bounds.width) / 2.0;
         attributesList = (0..<collectionView!.numberOfItems(inSection: 0)).map { (i)
             -> CircularCollectionViewLayoutAttributes in
@@ -59,8 +59,8 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
             let attributes = CircularCollectionViewLayoutAttributes(forCellWith: NSIndexPath(item: i,
                                                                                              section: 0) as IndexPath)
             attributes.size = self.itemSize
-            // position each item at the center of the screen
-            attributes.center = CGPoint(x: centerX, y: self.collectionView!.bounds.midY)
+            // position each item at the center of the screen and lowering it below 50 pixels
+            attributes.center = CGPoint(x: centerX, y: self.collectionView!.bounds.midY + 50)
             // rotate each item by the amount anglePerItem * i, in radians
             // and adds the value of angle to each item so it's not a constant but rather an angular position
             attributes.angle = self.angle + (self.anglePerItem * CGFloat(i))
