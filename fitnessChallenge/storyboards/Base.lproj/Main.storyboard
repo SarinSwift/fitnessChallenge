@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3s9-Vu-Djc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uhf-vc-uGf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -135,6 +135,48 @@
             </objects>
             <point key="canvasLocation" x="1679" y="34"/>
         </scene>
+        <!--Circular Collection View Controller-->
+        <scene sceneID="EEg-Em-al3">
+            <objects>
+                <collectionViewController id="uhf-vc-uGf" customClass="CircularCollectionViewController" customModule="fitnessChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CPJ-3s-qfZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewLayout key="collectionViewLayout" id="7rS-8r-Gzk" customClass="CircularCollectionViewLayout" customModule="fitnessChallenge" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="circleCellId" id="UMT-Y4-R13" customClass="CircularCollectionViewCell" customModule="fitnessChallenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="179"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="179"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-Qi-RTk">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="154"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VXi-Qi-RTk" secondAttribute="bottom" constant="25" id="E4n-yk-Thz"/>
+                                    <constraint firstAttribute="trailing" secondItem="VXi-Qi-RTk" secondAttribute="trailing" id="Gtj-32-Z18"/>
+                                    <constraint firstItem="VXi-Qi-RTk" firstAttribute="leading" secondItem="UMT-Y4-R13" secondAttribute="leading" id="Qs5-m7-OeV"/>
+                                    <constraint firstItem="VXi-Qi-RTk" firstAttribute="top" secondItem="UMT-Y4-R13" secondAttribute="top" id="gvO-rZ-5QA"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="179"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="uhf-vc-uGf" id="Ckn-bd-RAJ"/>
+                            <outlet property="delegate" destination="uhf-vc-uGf" id="acu-A6-wmr"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyt-Bm-C0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="1180.6596701649175"/>
+        </scene>
         <!--Info View Controller-->
         <scene sceneID="qUq-0b-4o6">
             <objects>
@@ -214,11 +256,11 @@
                                     <action selector="pickEmojiButtonTapped:" destination="eLM-B1-fNS" eventType="touchUpInside" id="s4b-wO-9wO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an emoji for how you are feeling after completing the challenge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59d-Cl-tcU">
-                                <rect key="frame" x="15" y="99" width="345" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an emoji for how you are feeling after completing the challenge!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59d-Cl-tcU">
+                                <rect key="frame" x="2.5" y="99" width="370" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Sme-iF-ERb"/>
-                                    <constraint firstAttribute="width" constant="345" id="Xu7-eP-Vrb"/>
+                                    <constraint firstAttribute="width" constant="370" id="Xu7-eP-Vrb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

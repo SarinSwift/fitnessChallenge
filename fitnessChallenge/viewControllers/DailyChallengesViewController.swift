@@ -33,6 +33,8 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     var dailyChallenge: Challenges!
+    var indexPathToSave: Int?
+ 
     
     func setEmoji(emoji: String) {
         self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
@@ -83,7 +85,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
 
     let addEmojiButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Add", for: .normal)
+        button.setTitle("Feeling", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0.9333333333, green: 0.3529411765, blue: 0.3764705882, alpha: 0.89), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.frame = CGRect(x: 200, y: 200, width: 50, height: 50)

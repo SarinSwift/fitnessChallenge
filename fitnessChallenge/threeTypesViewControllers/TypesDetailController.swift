@@ -134,7 +134,11 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     
 //        uncomment!!
 //        showDailyChallenges(selectedDay: selectedDay)
-        showDailyChallenges()
+        
+        let dailyChallengesVC = DailyChallengesViewController()
+        dailyChallengesVC.indexPathToSave = indexPath.row
+        navigationController?.pushViewController(dailyChallengesVC, animated: true)
+        
     }
     
 }

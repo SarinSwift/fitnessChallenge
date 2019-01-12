@@ -17,6 +17,8 @@
 		0427FA7021E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */; };
 		042F49E021E56570008A3580 /* fitnessChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0449419421B5C47800A253B5 /* fitnessChallenge.xcdatamodeld */; };
 		0449419921B5E87400A253B5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419821B5E87400A253B5 /* Colors.swift */; };
+		045570F421E91C8F0028CC0D /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045570F321E91C8F0028CC0D /* CircularCollectionViewLayout.swift */; };
+		045570F621E91F520028CC0D /* CircularCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045570F521E91F520028CC0D /* CircularCollectionViewController.swift */; };
 		0458B20C21A242E100BEFE89 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0458B20B21A242E100BEFE89 /* PersistenceLayer.swift */; };
 		04596C6821E55CEB0087C4BA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04596C6721E55CEB0087C4BA /* CoreDataHelper.swift */; };
 		046EA63521E7F3C100F78E9B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EA63421E7F3C100F78E9B /* CoreDataManager.swift */; };
@@ -48,6 +50,8 @@
 		0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedDailyChallengesViewController.swift; sourceTree = "<group>"; };
 		0449419521B5C47800A253B5 /* fitnessChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fitnessChallenge.xcdatamodel; sourceTree = "<group>"; };
 		0449419821B5E87400A253B5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		045570F321E91C8F0028CC0D /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
+		045570F521E91F520028CC0D /* CircularCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewController.swift; sourceTree = "<group>"; };
 		0458B20B21A242E100BEFE89 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
 		04596C6721E55CEB0087C4BA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		046EA63421E7F3C100F78E9B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 			children = (
 				049399742173DFF3005F86E6 /* ViewController.swift */,
 				046EA63621E852A800F78E9B /* InfoViewController.swift */,
+				045570F521E91F520028CC0D /* CircularCollectionViewController.swift */,
+				045570F321E91C8F0028CC0D /* CircularCollectionViewLayout.swift */,
 				04D178452175429000E6AB4E /* CardSwipeViewController.swift */,
 				04D178472175581D00E6AB4E /* CategoryCell.swift */,
 				04D09D2021E697E40065EFDE /* TypesCell.swift */,
@@ -265,6 +271,7 @@
 				049399752173DFF3005F86E6 /* ViewController.swift in Sources */,
 				0449419921B5E87400A253B5 /* Colors.swift in Sources */,
 				0412A48721E4112C0040B440 /* emojiImageCollectionViewCell.swift in Sources */,
+				045570F421E91C8F0028CC0D /* CircularCollectionViewLayout.swift in Sources */,
 				048949692179397900499313 /* Challenges.swift in Sources */,
 				0458B20C21A242E100BEFE89 /* PersistenceLayer.swift in Sources */,
 				0400719A217706D100B244C3 /* TypesDetailController.swift in Sources */,
@@ -272,6 +279,7 @@
 				04D09D2121E697E40065EFDE /* TypesCell.swift in Sources */,
 				04D178462175429000E6AB4E /* CardSwipeViewController.swift in Sources */,
 				049399732173DFF3005F86E6 /* AppDelegate.swift in Sources */,
+				045570F621E91F520028CC0D /* CircularCollectionViewController.swift in Sources */,
 				046EA63521E7F3C100F78E9B /* CoreDataManager.swift in Sources */,
 				0400719E21790B9800B244C3 /* Days.swift in Sources */,
 				04D09D2521E712B20065EFDE /* MedDailyChallengesVC.swift in Sources */,
