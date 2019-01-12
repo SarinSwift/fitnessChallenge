@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uhf-vc-uGf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3s9-Vu-Djc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -123,7 +123,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="QKZ-6G-Gpd"/>
                         <barButtonItem key="rightBarButtonItem" image="smallerInfo" style="done" id="vdN-Jw-DRz">
                             <connections>
-                                <segue destination="Pd0-66-YSX" kind="show" id="b5o-NW-LWT"/>
+                                <segue destination="uhf-vc-uGf" kind="show" id="WTa-Uv-94G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -186,7 +186,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information for workouts!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-zW-sKT">
-                                <rect key="frame" x="16" y="74" width="343" height="55"/>
+                                <rect key="frame" x="16" y="30" width="343" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Le9-Y6-MmP"/>
                                     <constraint firstAttribute="width" constant="343" id="YQa-3c-n6b"/>
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbD-eP-pW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693.5999999999999" y="803.74812593703155"/>
+            <point key="canvasLocation" x="1975" y="874"/>
         </scene>
         <!--Emoji-->
         <scene sceneID="mmV-jY-a4R">

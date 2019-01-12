@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 private let reuseIdentifier = "Cell"
 
@@ -14,16 +15,38 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
     
     let exerImages = ["arms", "legs", "abs", "chest", "back", "shoulders", "calves"]
     let exerImagesText = ["Arms", "Legs", "Abs", "Chest", "Back", "Shoulders", "Calves"]
+    
+    let infoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Targeted Muscle Groups and Exercises"
+        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.font = UIFont(name: "Helvetica", size: 22)
+        label.numberOfLines = 10
+        label.textAlignment = .center
+        label.layer.borderWidth = 2
+        label.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.layer.cornerRadius = 5
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.delegate = self
         collectionView?.dataSource = self
         
+        collectionView?.backgroundColor = #colorLiteral(red: 0.9342781305, green: 0.3532425165, blue: 0.3745281994, alpha: 1)
+        
         self.collectionView!.register(CircularCollectionViewCell.self, forCellWithReuseIdentifier: "circleCellId")
         let imageView = UIImageView(image: UIImage(named: "bg-dark"))
         imageView.contentMode = UIViewContentMode.scaleAspectFill
-//        collectionView!.backgroundView = imageView
+        
+        view.addSubview(infoLabel)
+        
+        NSLayoutConstraint(item: infoLabel, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 130).isActive = true
+        NSLayoutConstraint(item: infoLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: infoLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 80).isActive = true
+        NSLayoutConstraint(item: infoLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 330).isActive = true
     }
 
     // MARK: UICollectionViewDataSource
@@ -32,7 +55,11 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+        // redirects to the exercises web page
+        if let url = NSURL(string: "https://wger.de/en/exercise/overview/"){
+            let svc = SFSafariViewController(url: url as URL)
+            present(svc, animated: true, completion: nil)
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,7 +70,7 @@ class CircularCollectionViewController: UICollectionViewController, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "circleCellId", for: indexPath) as! CircularCollectionViewCell
         cell.imageName = exerImages[indexPath.row]
         cell.exerciseLabel.text = exerImagesText[indexPath.row]
-        cell.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.3532425165, blue: 0.3764705882, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 5
         return cell
     }
@@ -78,7 +105,7 @@ class CircularCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         contentView.layer.cornerRadius = 5
-        contentView.layer.borderColor = #colorLiteral(red: 0.3504773378, green: 0.2343077362, blue: 0.4147908092, alpha: 1)
+        contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         contentView.layer.borderWidth = 3.7
         contentView.layer.cornerRadius = 5
         contentView.layer.shouldRasterize = true
