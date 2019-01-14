@@ -42,8 +42,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     
     private let challenesCellId = "challengesCellId"
     
-    // use for loop instead of this?
-    var challengesArray: [Challenges] = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
+    var challengesArray: [Challenges] = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: true, ifChallenge2Done: true),
         Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, ifChallenge1Done: false, ifChallenge2Done: false),
         Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, ifChallenge1Done: false, ifChallenge2Done: false),
         Challenges(challenge1: "1 minute plank", challenge2: "30 jumping jacks", idChallenge1: 7, idChallenge2: 8, ifChallenge1Done: false, ifChallenge2Done: false),
@@ -168,21 +167,28 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
+        
+        let challengesCell = ChallengesCell()
+        
+        if challengesArray[0].ifChallenge1Done == true {
+//            cell[indexPath.row].markButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+//            cell[indexPath.row].markButton.setTitle("sarin", for: .normal)
+        }
        
-        let selectedDay = UserDefaults.standard.value(forKey: "selectedDay") as! Int
-        if indexPath.row == 0 {
-            cell.challenge1Label.text = challengesArray[selectedDay].challenge1
-            cell.challenge1 = challengesArray[selectedDay].idChallenge1
-            cell.completed = challengesArray[selectedDay].ifChallenge1Done
-            return cell
-        }
-        else if indexPath.row == 1{
-            cell.challenge1Label.text = challengesArray[selectedDay].challenge2
-            return cell
-        }
+//        let selectedDay = UserDefaults.standard.value(forKey: "selectedDay") as! Int
+//        if indexPath.row == 0 {
+//            cell.challenge1Label.text = challengesArray[selectedDay].challenge1
+//            cell.challenge1 = challengesArray[selectedDay].idChallenge1
+//            cell.completed = challengesArray[selectedDay].ifChallenge1Done
+//            return cell
+//        }
+//        else if indexPath.row == 1{
+//            cell.challenge1Label.text = challengesArray[selectedDay].challenge2
+//            return cell
+//        }
         
         // 1
-        cell.markButton.setTitle("Completed!!!!", for: .normal)
+//        cell.markButton.setTitle("Completed!!!!", for: .normal)
         return cell
     }
     
@@ -190,15 +196,22 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         return self.view.frame.height / 3
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
-//        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
+        
 //        if cell.completed == true {
 //            cell.markButton.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
 //        } else if cell.completed == false {
 //            cell.markButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
 //        }
-//    }
+        
+        // HARD CODE
+//        let challengesCell = ChallengesCell()
+//        if challengesArray[0].ifChallenge1Done == true {
+//            cell.markButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+//            cell.markButton.setTitle("sarin", for: .normal)
+//        }
+    }
     
 }
 
@@ -301,37 +314,35 @@ class ChallengesCell: UITableViewCell {
     }
     
     @objc func buttonClicked(_ : UIButton) {
-        completed = true
-        
-        // saving to CoreData
-        let challenge = CoreDataHelper.newChallenge()
-        challenge.completion = completed
-        CoreDataHelper.saveChallenge()
-        
-        // setting it to be green based on Boolean value in CoreData
-        if challenge.completion == true {
-            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-            markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-            markButton.setTitle("Completed!", for: .normal)
-            markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-
-            // These 2 lines make the whole box jump in front
-            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-                self.transform = CGAffineTransform.identity
-            }, completion: nil)
-        } else {
-            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-            markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            markButton.setTitle("Complete", for: .normal)
-            markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-
-            // These 2 lines make the whole box jump in front
-            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-                self.transform = CGAffineTransform.identity
-            }, completion: nil)
-        }
+//        completed = true
+//        // saving to CoreData
+//        let challenge = CoreDataHelper.newChallenge()
+//        challenge.completion = completed
+//        CoreDataHelper.saveChallenge()
+//        // setting it to be green based on Boolean value in CoreData
+//        if challenge.completion == true {
+//            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+//            markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+//            markButton.setTitle("Completed!", for: .normal)
+//            markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
+//
+//            // These 2 lines make the whole box jump in front
+//            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+//                self.transform = CGAffineTransform.identity
+//            }, completion: nil)
+//        } else {
+//            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
+//            markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//            markButton.setTitle("Complete", for: .normal)
+//            markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+//
+//            // These 2 lines make the whole box jump in front
+//            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+//            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
+//                self.transform = CGAffineTransform.identity
+//            }, completion: nil)
+//        }
         
         markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
         markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
@@ -343,6 +354,11 @@ class ChallengesCell: UITableViewCell {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
             self.transform = CGAffineTransform.identity
         }, completion: nil)
+        
+        
+        
+        
+        
         
     }
     

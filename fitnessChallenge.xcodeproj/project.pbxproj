@@ -16,6 +16,8 @@
 		0427FA6E21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0427FA6C21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib */; };
 		0427FA7021E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */; };
 		042F49E021E56570008A3580 /* fitnessChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0449419421B5C47800A253B5 /* fitnessChallenge.xcdatamodeld */; };
+		0442451A21ED08B1005E2D63 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442451921ED08B1005E2D63 /* Extensions.swift */; };
+		0442451C21ED1055005E2D63 /* DailyChallengeTestttt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442451B21ED1055005E2D63 /* DailyChallengeTestttt.swift */; };
 		0449419921B5E87400A253B5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449419821B5E87400A253B5 /* Colors.swift */; };
 		045570F421E91C8F0028CC0D /* CircularCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045570F321E91C8F0028CC0D /* CircularCollectionViewLayout.swift */; };
 		045570F621E91F520028CC0D /* CircularCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045570F521E91F520028CC0D /* CircularCollectionViewController.swift */; };
@@ -48,6 +50,8 @@
 		0427FA6B21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirtyDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		0427FA6C21E4335800591FE0 /* ThirtyDayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirtyDayCollectionViewCell.xib; sourceTree = "<group>"; };
 		0427FA6F21E450EA00591FE0 /* CustomizedDailyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedDailyChallengesViewController.swift; sourceTree = "<group>"; };
+		0442451921ED08B1005E2D63 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0442451B21ED1055005E2D63 /* DailyChallengeTestttt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallengeTestttt.swift; sourceTree = "<group>"; };
 		0449419521B5C47800A253B5 /* fitnessChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fitnessChallenge.xcdatamodel; sourceTree = "<group>"; };
 		0449419821B5E87400A253B5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		045570F321E91C8F0028CC0D /* CircularCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				04596C6721E55CEB0087C4BA /* CoreDataHelper.swift */,
 				046EA63421E7F3C100F78E9B /* CoreDataManager.swift */,
 				0449419421B5C47800A253B5 /* fitnessChallenge.xcdatamodeld */,
+				0442451921ED08B1005E2D63 /* Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				04D178472175581D00E6AB4E /* CategoryCell.swift */,
 				04D09D2021E697E40065EFDE /* TypesCell.swift */,
 				040071A021791DAE00B244C3 /* DailyChallengesViewController.swift */,
+				0442451B21ED1055005E2D63 /* DailyChallengeTestttt.swift */,
 				04B7E53A21AF396F0022C29C /* ChooseEmojiViewController.swift */,
 				0412A48521E4112C0040B440 /* emojiImageCollectionViewCell.swift */,
 				0412A48621E4112C0040B440 /* emojiImageCollectionViewCell.xib */,
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049399752173DFF3005F86E6 /* ViewController.swift in Sources */,
+				0442451C21ED1055005E2D63 /* DailyChallengeTestttt.swift in Sources */,
 				0449419921B5E87400A253B5 /* Colors.swift in Sources */,
 				0412A48721E4112C0040B440 /* emojiImageCollectionViewCell.swift in Sources */,
 				045570F421E91C8F0028CC0D /* CircularCollectionViewLayout.swift in Sources */,
@@ -289,6 +296,7 @@
 				04D178482175581D00E6AB4E /* CategoryCell.swift in Sources */,
 				04D09D2321E6F97A0065EFDE /* EmojiSetterDelegate.swift in Sources */,
 				04B7E53B21AF396F0022C29C /* ChooseEmojiViewController.swift in Sources */,
+				0442451A21ED08B1005E2D63 /* Extensions.swift in Sources */,
 				040071A121791DAE00B244C3 /* DailyChallengesViewController.swift in Sources */,
 				042F49E021E56570008A3580 /* fitnessChallenge.xcdatamodeld in Sources */,
 				0427FA6D21E4335800591FE0 /* ThirtyDayCollectionViewCell.swift in Sources */,

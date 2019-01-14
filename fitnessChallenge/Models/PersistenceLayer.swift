@@ -39,18 +39,15 @@ struct PersistenceLayer {
         userDefaults.set(challengesData, forKey: PersistenceLayer.userDefaultsChallengesKeyValue)
     }
     
-//    mutating func markChallengeAsComplete(_ challengeIndex: Int) -> Challenges {
-//        var updatedChallenge = self.challenges[challengeIndex]
+    mutating func markChallengeAsComplete(_ challengeIndex: Int) -> Challenges {
+        let updatedChallenge = self.challenges[challengeIndex]
         
-//        guard updatedChallenge.hasCompletedForToday == false else { return updatedChallenge }
-//
-//        let now = Date()
-//        updatedChallenge.lastCompletionDate = now
+        guard updatedChallenge.ifChallenge1Done == false else { return updatedChallenge }
         
-//        self.challenges[challengeIndex] = updatedChallenge
-//        self.saveChallenges()
-//
-//        return updatedChallenge
-//    }
+        self.challenges[challengeIndex] = updatedChallenge
+        self.saveChallenges()
+
+        return updatedChallenge
+    }
     
 }

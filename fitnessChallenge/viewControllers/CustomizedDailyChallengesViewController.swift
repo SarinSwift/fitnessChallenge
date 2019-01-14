@@ -133,15 +133,6 @@ class CustomChallengeCell: UITableViewCell, UITextFieldDelegate {
         return view
     }()
     
-//    let challenge1TextField: UITextField = {
-//        let textField = UITextField()
-//        textField.placeholder = "Insert Challenge 1"
-//        textField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//        textField.font = UIFont.boldSystemFont(ofSize: 18)
-//        textField.translatesAutoresizingMaskIntoConstraints = false
-//        return textField
-//    }()
-    
     let challenge1TextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Insert Challenge 1"
@@ -187,10 +178,7 @@ class CustomChallengeCell: UITableViewCell, UITextFieldDelegate {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupView()
-        
-        
-    }
+        setupView()    }
     
     func setupView() {
         

@@ -37,7 +37,8 @@ class MedTypeDetailController: TypesDetailController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medCellId", for: indexPath) as! MedThirtyDayCell
-        cell.dayLabel.text = daysArray[indexPath.item].dayNumber
+        cell.dayLabel.text = "Day \(indexPath.row+1)"
+        
         return cell
     }
 }
