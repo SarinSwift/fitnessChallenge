@@ -32,7 +32,7 @@ class TypesDetailController: UIViewController, UITableViewDelegate, UITableViewD
     
     let daysCellId = "daysCellId"
     
-    var challengesArray: [Challenges] = [Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
+    var challengesArray: [Challenges] = [Challenges(challenge1: "11 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
                                          Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, ifChallenge1Done: false, ifChallenge2Done: false),
                                          Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, ifChallenge1Done: false, ifChallenge2Done: false),
                                          Challenges(challenge1: "1 minute plank", challenge2: "30 jumping jacks", idChallenge1: 7, idChallenge2: 8, ifChallenge1Done: false, ifChallenge2Done: false),

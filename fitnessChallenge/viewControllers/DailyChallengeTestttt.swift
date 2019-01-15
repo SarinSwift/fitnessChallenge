@@ -124,7 +124,7 @@ class DailyChallengeTest: UIViewController, EmojiSetterDelegate {
             pinkView1.heightAnchor.constraint(equalToConstant: 180),
             pinkView1.widthAnchor.constraint(equalToConstant: view.bounds.width - 20),
             pinkView1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pinkView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 200)
+            pinkView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 110)
             ])
         NSLayoutConstraint.activate([
             pinkView2.heightAnchor.constraint(equalToConstant: 180),
@@ -147,18 +147,20 @@ class DailyChallengeTest: UIViewController, EmojiSetterDelegate {
             ])
         
         NSLayoutConstraint.activate([
-            challengeLabel1.heightAnchor.constraint(equalToConstant: 44),
+            challengeLabel1.heightAnchor.constraint(equalToConstant: 100),
             challengeLabel1.widthAnchor.constraint(equalToConstant: 120),
             challengeLabel1.centerXAnchor.constraint(equalTo: pinkView1.centerXAnchor),
             challengeLabel1.centerYAnchor.constraint(equalTo: pinkView1.centerYAnchor),
-            challengeLabel1.leftAnchor.constraint(equalTo: pinkView1.leftAnchor, constant: 10)
+            challengeLabel1.leftAnchor.constraint(equalTo: pinkView1.leftAnchor, constant: 10),
+            challengeLabel1.rightAnchor.constraint(equalTo: markButton1.leftAnchor, constant: -0.5)
             ])
         NSLayoutConstraint.activate([
-            challengeLabel2.heightAnchor.constraint(equalToConstant: 44),
+            challengeLabel2.heightAnchor.constraint(equalToConstant: 100),
             challengeLabel2.widthAnchor.constraint(equalToConstant: 120),
             challengeLabel2.centerXAnchor.constraint(equalTo: pinkView2.centerXAnchor),
             challengeLabel2.centerYAnchor.constraint(equalTo: pinkView2.centerYAnchor),
-            challengeLabel2.leftAnchor.constraint(equalTo: pinkView2.leftAnchor, constant: 10)
+            challengeLabel2.leftAnchor.constraint(equalTo: pinkView2.leftAnchor, constant: 10),
+            challengeLabel2.rightAnchor.constraint(equalTo: markButton2.leftAnchor, constant: -0.5)
             ])
         
         addEmojiButton.heightAnchor.constraint(equalToConstant: 110).isActive = true
