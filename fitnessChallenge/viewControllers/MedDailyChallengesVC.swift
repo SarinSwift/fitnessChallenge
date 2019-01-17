@@ -37,22 +37,10 @@ class MedDailyChallengesVC: DailyChallengesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medChallengesCellId", for: indexPath) as! MedChallengesCell
-        
-//        let selectedDay = UserDefaults.standard.value(forKey: "selectedDay") as! Int
-//        if indexPath.row == 0 {
-//            cell.challenge1Label.text = medChallengesArray[selectedDay].challenge1
-//            cell.challenge1 = challengesArray[selectedDay].idChallenge1
-//
-//            return cell
-//        } else if indexPath.row == 1 {
-//            cell.challenge1Label.text = medChallengesArray[selectedDay].challenge2
-//            return cell
-//        }
-        
         return cell
     }
 }
 
 class MedChallengesCell: ChallengesCell {
-    
+    // inherits everything from ChallengesCell
 }

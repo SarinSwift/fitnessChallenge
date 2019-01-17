@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-private let reuseIdentifier = "Cell"
+// CollectionView with a circular card scroll view for the information page
 
 class CircularCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     

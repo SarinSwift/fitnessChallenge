@@ -9,21 +9,6 @@
 import UIKit
 import CoreData
 
-//class Persistance {
-//    var bodyFitnessChallenge = BodyFitnessChallenge()
-//    //..
-//}
-//
-//class BodyFitnessChallenge {
-//    var dailyChallenges: [Challenges] = [
-//        Challenges(challenge1: "10 squats", challenge2: "Drink more than 6 cups of water", idChallenge1: 1, idChallenge2: 2, ifChallenge1Done: false, ifChallenge2Done: false),
-//        Challenges(challenge1: "20 crunches", challenge2: "Use the stairs", idChallenge1: 3, idChallenge2: 4, ifChallenge1Done: false, ifChallenge2Done: false),
-//        Challenges(challenge1: "20 lunges", challenge2: "Eat 1 apple", idChallenge1: 5, idChallenge2: 6, ifChallenge1Done: false, ifChallenge2Done: false),
-//        Challenges(challenge1: "1 minute plank", challenge2: "30 jumping jacks", idChallenge1: 7, idChallenge2: 8, ifChallenge1Done: false, ifChallenge2Done: false),
-//        Challenges(challenge1: "10 pushups", challenge2: "Organize your room", idChallenge1: 9, idChallenge2: 10, ifChallenge1Done: false, ifChallenge2Done: false)
-//    ]
-//}
-
 // first card
 // The viewController that has the 2 tableViewCells
 
@@ -31,11 +16,7 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    var dailyChallenge: Challenges!
-    var indexPathToSave: Int?
  
-    
     func setEmoji(emoji: String) {
         self.addEmojiButton.setImage(UIImage(named: emoji), for: .normal)
     }
@@ -99,7 +80,6 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     // will bring up the storyboard ChooseEmojiViewController!
     @objc func addEmojiTapped(_ : UIButton) {
         let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         
         let emojiVC = sb.instantiateViewController(withIdentifier: "chooseEmoji") as! ChooseEmojiViewController
         // set the delegate unless it won't set the emoji!!
@@ -167,28 +147,6 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
-        
-        let challengesCell = ChallengesCell()
-        
-        if challengesArray[0].ifChallenge1Done == true {
-//            cell[indexPath.row].markButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-//            cell[indexPath.row].markButton.setTitle("sarin", for: .normal)
-        }
-       
-//        let selectedDay = UserDefaults.standard.value(forKey: "selectedDay") as! Int
-//        if indexPath.row == 0 {
-//            cell.challenge1Label.text = challengesArray[selectedDay].challenge1
-//            cell.challenge1 = challengesArray[selectedDay].idChallenge1
-//            cell.completed = challengesArray[selectedDay].ifChallenge1Done
-//            return cell
-//        }
-//        else if indexPath.row == 1{
-//            cell.challenge1Label.text = challengesArray[selectedDay].challenge2
-//            return cell
-//        }
-        
-        // 1
-//        cell.markButton.setTitle("Completed!!!!", for: .normal)
         return cell
     }
     
@@ -196,174 +154,4 @@ class DailyChallengesViewController: UIViewController, UITableViewDelegate, UITa
         return self.view.frame.height / 3
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: challenesCellId, for: indexPath) as! ChallengesCell
-        
-//        if cell.completed == true {
-//            cell.markButton.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
-//        } else if cell.completed == false {
-//            cell.markButton.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-//        }
-        
-        // HARD CODE
-//        let challengesCell = ChallengesCell()
-//        if challengesArray[0].ifChallenge1Done == true {
-//            cell.markButton.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-//            cell.markButton.setTitle("sarin", for: .normal)
-//        }
-    }
-    
-}
-
-
-
-// first card
-// The single cell that has the label and the markButton
-
-class ChallengesCell: UITableViewCell {
-    
-    var completed = false
-//        didSet {
-//
-//            // setting it to be green based on Boolean value in CoreData
-//            if completed == true {
-//                markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-//                markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-//                markButton.setTitle("Completed!", for: .normal)
-//                markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-//
-//                // These 2 lines make the whole box jump in front
-//                self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-//                    self.transform = CGAffineTransform.identity
-//                }, completion: nil)
-//            } else {
-//                markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//                markButton.setTitle("Complete", for: .normal)
-//                markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-//            }
-//        }
-//   {
-    
-    var challenge1: Int = 0
-    
-    let cellView: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.9342781305, green: 0.3532425165, blue: 0.3764705882, alpha: 0.89)
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let challenge1Label: UILabel = {
-        let label = UILabel()
-        label.text = "10000 squatss :)"
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.numberOfLines = 2
-        return label
-    }()
-    
-    
-    var markButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Complete", for: .normal)
-        button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-        button.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
-        button.layer.cornerRadius = 10
-        button.layer.borderWidth = 2
-        button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        return button
-    }()
-    
-    
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
-    }
-    
-    func setupView() {
-        addSubview(cellView)
-        cellView.addSubview(challenge1Label)
-        cellView.addSubview(markButton)
-        
-        
-        challenge1Label.translatesAutoresizingMaskIntoConstraints = false
-        challenge1Label.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        challenge1Label.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        challenge1Label.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20).isActive = true
-        challenge1Label.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
-        
-        markButton.translatesAutoresizingMaskIntoConstraints = false
-        markButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        markButton.widthAnchor.constraint(equalToConstant: 110).isActive = true
-        markButton.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -20).isActive = true
-        markButton.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
-        
-        NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
-            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -60)
-            ])
-        
-        markButton.isEnabled = true
-        markButton.addTarget(self, action: #selector(buttonClicked(_ :)), for: .touchUpInside)
-        
-    }
-    
-    @objc func buttonClicked(_ : UIButton) {
-//        completed = true
-//        // saving to CoreData
-//        let challenge = CoreDataHelper.newChallenge()
-//        challenge.completion = completed
-//        CoreDataHelper.saveChallenge()
-//        // setting it to be green based on Boolean value in CoreData
-//        if challenge.completion == true {
-//            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-//            markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-//            markButton.setTitle("Completed!", for: .normal)
-//            markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-//
-//            // These 2 lines make the whole box jump in front
-//            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-//                self.transform = CGAffineTransform.identity
-//            }, completion: nil)
-//        } else {
-//            markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-//            markButton.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            markButton.setTitle("Complete", for: .normal)
-//            markButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-//
-//            // These 2 lines make the whole box jump in front
-//            self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-//            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-//                self.transform = CGAffineTransform.identity
-//            }, completion: nil)
-//        }
-        
-        markButton.backgroundColor = UIColor(red: 175/255, green: 210/255, blue: 117/255, alpha: 1)
-        markButton.layer.borderColor = #colorLiteral(red: 0.6862745098, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
-        markButton.setTitle("Completed!", for: .normal)
-        markButton.setTitleColor(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), for: .normal)
-
-        // These 2 lines make the whole box jump in front
-        self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 6, options: .allowUserInteraction, animations: {
-            self.transform = CGAffineTransform.identity
-        }, completion: nil)
-        
-        
-        
-        
-        
-        
-    }
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }

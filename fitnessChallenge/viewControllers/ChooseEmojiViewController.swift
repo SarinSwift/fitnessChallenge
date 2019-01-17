@@ -12,8 +12,6 @@
 
 import UIKit
 
-
-
 // called when the user presses the addEmojiButton
 
 class ChooseEmojiViewController: UIViewController {

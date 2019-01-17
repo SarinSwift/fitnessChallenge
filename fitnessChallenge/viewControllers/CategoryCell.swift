@@ -15,7 +15,7 @@ import Foundation
 import UIKit
 
 //This is the class the CardSwipeViewController contains
-//Vertical scroll
+//Vertical scroll (Unseen scroll)
 class CategoryCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // Now our categoryCell has a property called 'cardSwipeController'

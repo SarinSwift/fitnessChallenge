@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Custom CollectionView Layout
+
 class CircularCollectionViewLayout: UICollectionViewLayout {
     
     let itemSize = CGSize(width: 300, height: 426)
@@ -88,6 +90,8 @@ class CircularCollectionViewLayout: UICollectionViewLayout {
     
 }
 
+
+// CollectionView Layout Attributes
 
 class CircularCollectionViewLayoutAttributes: UICollectionViewLayoutAttributes {
     // anchor point becasue the roatation happens aroun the point that isnt the center!

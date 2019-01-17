@@ -15,7 +15,6 @@ struct Challenges: Codable {
     var idChallenge2: Int
     var ifChallenge1Done: Bool
     var ifChallenge2Done: Bool
-    
 }
 
 extension Date {
