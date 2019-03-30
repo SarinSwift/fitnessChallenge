@@ -11,3 +11,10 @@ Read my blog post about this [app!](https://uxdesign.cc/spd1-1-health-and-diet-c
 
 ## Screen Casts
 &nbsp; &nbsp; &nbsp; ![Main](Images/Mainpage.png)  ![Cards](Images/CardMainPage.png)  ![Daily](Images/DailyChallenges.png)  ![Complete](Images/CompletedPage.png)
+
+---
+### Contact Me
+**Sarin Swift** *iOS Developer, UI and UX designer*\
+Check my [GitHub profile](https://github.com/SarinSwift)\
+Connect with me on [LinkedIn](https://www.linkedin.com/in/sarin-swift-98224816b/)\
+Check my [Portfolio](https://www.makeschool.com/portfolio/Sarin-Swift)
